@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+
+    <title>Xvito - Responsive Bootstrap Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.png">
+
+    <!-- These plugins only need for the run this page -->
+    <link rel="stylesheet" href="css/default-assets/modal.css">
+
+    <!-- Master Stylesheet CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader-area">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preloader -->
+
+   <!-- ======================================
+    ******* Main Page Wrapper **********
+    ======================================= -->
+
+    <div class="main-container-wrapper">
+        <!-- Top bar area -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="img/core-img/logo.png" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="img/core-img/small-logo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item app-search d-none d-md-block">
+                        <form role="search" class=""><input type="text" placeholder="Search..." class="form-control">
+                            <button type="submit" class="search-btn mr-0"><i class="fa fa-search"></i></button></form>
+                    </li>
+                </ul>
+                <ul class="top-navbar-area navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown dropdown-animate">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                            <img class="mr-2 flex-30-img" src="img/shop-img/l5.png" alt="">English<i class="arrow_carrot-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Language</p>
+
+                            <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l2.jpg" alt=""> LOP</a>
+                            <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l3.jpg" alt=""> KYI</a>
+                            <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l4.jpg" alt=""> RTY</a>
+                            <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l1.jpg" alt=""> IND</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-animate">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                            <a class="dropdown-item preview-item d-flex align-items-center">
+                                <div class="notification-thumbnail">
+                                    <div class="preview-icon bg-primary">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="notification-item-content">
+                                    <h6>Code problem solved.</h6>
+                                    <p class="mb-0">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item preview-item d-flex align-items-center">
+                                <div class="notification-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="notification-item-content">
+                                    <h6>New theme update.</h6>
+                                    <p class="mb-0">
+                                        02 days ago
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item preview-item d-flex align-items-center">
+                                <div class="notification-thumbnail">
+                                    <div class="preview-icon bg-warning">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="notification-item-content">
+                                    <h6>Awsome support.</h6>
+                                    <p class="mb-0">
+                                        02 days ago
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item d-flex align-items-center">
+                                <div class="notification-thumbnail">
+                                    <div class="preview-icon bg-danger">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="notification-item-content">
+                                    <h6>Text to build on the card title.</h6>
+                                    <p class="mb-0">
+                                        03 days ago
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item nav-profile dropdown dropdown-animate">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="img/member-img/contact-2.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top" aria-labelledby="profileDropdown">
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-account profile-icon" aria-hidden="true"></i> My profile</a>
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-email-open profile-icon" aria-hidden="true"></i> Messages</a>
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon" aria-hidden="true"></i> Settings</a>
+                            <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon" aria-hidden="true"></i> Sign-out</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-xl-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="ti-layout-grid2"></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container-fluid page-body-wrapper">
+            <!-- Side Menu area -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box link-icon">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar link-icon">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span class="menu-title">Calendar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#advanced" aria-expanded="false" aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit link-icon">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            <span class="menu-title">Advanced</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="advanced">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="clint-list.html">Clint list</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="customer.html">Customer</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="blank.html">Blank page</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="gallery.html">Gallery</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="light-box.html">Light box gallery</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="modals.html">Modals</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="profile-2.html">Profile 2</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="ribbons.html">Ribbons</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="sweet.html">Sweet alert</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#job" aria-expanded="false" aria-controls="job">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell link-icon">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <span class="menu-title">Job</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="job">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="job.html">Job news</a></li>
+                                <li class="nav-item"><a class="nav-link" href="job-description.html">Description</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#app" aria-expanded="false" aria-controls="app">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command link-icon">
+                                <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                            </svg>
+                            <span class="menu-title">Apps</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="app">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="widgets.html">Widget</a></li>
+                                <li class="nav-item"><a class="nav-link" href="chat-box.html">Chat box</a></li>
+                                <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#email" aria-expanded="false" aria-controls="email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail link-icon">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="menu-title">Email</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="email">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="mail-inbox.html">Inbox</a></li>
+                                <li class="nav-item"><a class="nav-link" href="mail-view.html">Mail view</a></li>
+                                <li class="nav-item"><a class="nav-link" href="compose-mail.html">Compose mail</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#elements" aria-expanded="false" aria-controls="elements">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather link-icon">
+                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                                <line x1="16" y1="8" x2="2" y2="22"></line>
+                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                            </svg>
+                            <span class="menu-title">Ui Kits</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="elements">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="alert.html">Alert</a></li>
+                                <li class="nav-item"><a class="nav-link" href="avatar.html">Avatar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="buttons.html">Button</a></li>
+                                <li class="nav-item"><a class="nav-link" href="card.html">Card</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
+                                <li class="nav-item"><a class="nav-link" href="general.html">General</a></li>
+                                <li class="nav-item"><a class="nav-link" href="progressbar.html">Progressbar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="preloader.html">Preloader</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tab.html">Tab</a></li>
+                                <li class="nav-item"><a class="nav-link" href="dropdown.html">Dropdown</a></li>
+                                <li class="nav-item"><a class="nav-link" href="typography.html">Typography</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users link-icon">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <span class="menu-title">Members</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general" aria-expanded="false" aria-controls="general">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard link-icon">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                            <span class="menu-title">Pages</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="general">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="slider.html">Slider</a></li>
+                                <li class="nav-item"><a class="nav-link" href="range.html">Range Slider</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="forget-password.html">Forget Password</a></li>
+                                <li class="nav-item"><a class="nav-link" href="lock-screen.html">Lock Screen</a></li>
+                                <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart link-icon">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                            </svg>
+                            <span class="menu-title">Charts</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="apex-chart.html">Apex chart</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="chartist.html">Chartist Chart</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="chart-js.html">Chart js</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="morris-chart.html">Morris chart</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="c3-charts.html">C3 chart</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="task.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list link-icon">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                            <span class="menu-title">Task Zone</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tablet link-icon">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                            <span class="menu-title">Tables</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="data-table.html">Data table</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="price-table.html">Price table</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#form" aria-expanded="false" aria-controls="form">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-minus link-icon">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                <line x1="9" y1="14" x2="15" y2="14"></line>
+                            </svg>
+                            <span class="menu-title">Forms</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="form">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="basic-form.html">Basic form</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="advanced-elements.html">Elements</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="form-validation.html">Validation</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="form-wizard.html">Form Wizard</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="form-input-mask.html">Input mask</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="file-upload.html">File upload</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="rating.html">Rating</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ecommerce" aria-expanded="false" aria-controls="ecommerce">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart link-icon">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="menu-title">Ecommerce</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="ecommerce">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="product.html">Product</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="product-details.html">Single Product</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="order.html">Order</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="cart.html">Cart</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="checkout.html">Checkout</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="invoice.html">Invoice</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-aperture link-icon">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                                <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                                <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                                <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                                <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                                <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+                            </svg>
+                            <span class="menu-title">Icons</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="icons">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="font-awesome.html">Font Awesome</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pe-7-stroke.html">Pe-7 stroke</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="matarial-icons.html">Materialize</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="themify-icons.html">Themify</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="elegant-icons.html">Elegant</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="et-line-icons.html">Et-line</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin link-icon">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span class="menu-title">Maps</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="maps">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="vector-map.html">Vector</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="google-map.html">Google</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Page -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <!-- Modal area Start -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 box-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Animeted Model</h5>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-1">Fade in</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-2">Slide in</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-3">Slide in</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-4">Newspaper</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-5">Fall</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-6">Side Fall</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-7">Sticky Up</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-8">3D Flip</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-9">3D Flip</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-11">Super Scaled</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-12">Just Me</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-13">3D Slit</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-14">3D Rotate Bottom</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-16">Blur</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger md-setperspective mr-2 mb-2" data-modal="modal-17">Let me in</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger mr-2 mb-2" data-modal="modal-15">3D Rotate In Left</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger md-setperspective mr-2 mb-2" data-modal="modal-18">Make way!</button>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <button class="btn btn-primary md-trigger md-setperspective mr-2 mb-2" data-modal="modal-19">Slip from top</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 box-margin">
+                                <div class="card mb-30">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-2">Sirmon modal window</h5>
+
+                                        <p class="mb-30">Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults. To creata a custom Sirmon modal all you have to do is to add <code>.inmodal</code> class to html modal element.
+                                            Modal contains title, content and footer
+                                        </p>
+
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                                Launch demo modal
+                                            </button>
+                                        </div>
+                                        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content animated bounceInRight">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title d-block">Modal title</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                            printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                            remaining essentially unchanged.</p>
+                                                        <div class="form-group"><label>Sample Input</label> <input type="email" placeholder="Enter your email" class="form-control"></div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-2">Optional sizes</h5>
+
+                                        <p class="mb-30">Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code></p>
+
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+                                                Large Modal
+                                            </button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6">
+                                                Small Modal
+                                            </button>
+                                        </div>
+                                        <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal title</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                            printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                            remaining essentially unchanged.</p>
+                                                        <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                            printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                            remaining essentially unchanged.</p>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal title</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                            printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                            remaining essentially unchanged.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 box-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Live demo</h4>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                            Launch demo modal
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur praesentium perspiciatis vero, atque dolorum quaerat libero beatae cumque, dignissimos illo fugiat. Molestias officia delectus possimus dignissimos culpa ab asperiores rem. Ea odit earum blanditiis itaque, repellat ab consequatur. Est quis suscipit iusto harum maxime ratione, minima sed veritatis, error perferendis optio at nobis impedit quidem ad rerum, amet voluptatibus soluta!
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 box-margin">
+                                <div class="card mb-30">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Scrolling long content</h4>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                            Launch demo modal
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, distinctio minima ipsa dicta repellat quae harum, voluptas facilis autem eaque non numquam at deleniti error suscipit ullam aliquam tempore mollitia quisquam perspiciatis quam voluptatibus odit totam nulla veniam! Veritatis ea debitis cupiditate ipsa quidem rerum sed sint nobis natus, ullam quas, quo perspiciatis atque tempore explicabo dolorem ratione repudiandae reprehenderit. Itaque consequuntur assumenda, exercitationem molestiae dignissimos culpa distinctio ipsum. Eligendi quos libero dicta quaerat rem ducimus pariatur saepe fugiat eveniet culpa, voluptate tenetur, corrupti, ullam dolore sit. Minus modi, assumenda accusamus beatae ducimus quae voluptate consequatur a atque laudantium quibusdam, ratione nisi labore repellendus veritatis. Deleniti impedit, nesciunt accusamus iusto nulla soluta suscipit dolorem tempora facilis tempore enim laboriosam, ab tenetur reiciendis! Exercitationem sunt, laborum reprehenderit animi architecto adipisci, repellat rem a tenetur reiciendis dolore. Soluta, culpa, aspernatur voluptatum, rerum omnis fuga fugiat dolorum commodi quidem totam aut. Rem est quibusdam recusandae sequi facilis possimus, tempore minima asperiores fugit. Quidem consequuntur reprehenderit deleniti in modi aperiam ratione, officia similique, non assumenda doloribus iste ea itaque eligendi possimus hic, libero dolore. Ut tempore quaerat fugiat ipsum velit, itaque sequi exercitationem eveniet sit eos tempora, maiores vero. Similique vitae dicta illo velit a, repudiandae necessitatibus facilis obcaecati rem, iure aspernatur eius, nemo incidunt maxime unde consequatur quod quidem corporis cum temporibus. Excepturi vitae itaque iste, aut atque labore nisi id, qui voluptate aliquam architecto ipsum sed quam exercitationem soluta dolor consequatur, sint quaerat! Cupiditate adipisci tempora earum id perspiciatis inventore necessitatibus repudiandae, laboriosam corporis voluptatem aliquid nostrum in ratione eaque ex dolorem veritatis quaerat totam hic et accusantium provident. Omnis tempore dignissimos, voluptatum maiores natus suscipit earum aliquid sit ipsum eveniet, nobis, odio, sunt necessitatibus fugiat unde tenetur expedita molestias accusantium deleniti veritatis ullam. Distinctio nihil deserunt culpa et accusamus, nemo magni praesentium sint, harum eius temporibus ratione fuga repudiandae. Quis illum repellat mollitia illo voluptatibus ipsa amet, soluta iure quisquam, iste quam ratione eligendi aperiam nulla est explicabo consequatur voluptatum sit, iusto blanditiis suscipit reiciendis provident placeat vitae! Distinctio harum earum minima necessitatibus quae omnis et explicabo, nisi vero fugit. Saepe explicabo ab ducimus beatae inventore qui quo deleniti tempore magnam laborum a, consequuntur. Suscipit architecto autem, perferendis aut expedita, fuga officia quaerat reiciendis asperiores, animi aliquid ducimus nemo tempora vel repudiandae fugiat odit ea sed adipisci consequatur, placeat est explicabo! Laudantium, optio voluptates minus asperiores et eligendi cum praesentium similique, repudiandae cupiditate assumenda totam id tenetur blanditiis quos rerum distinctio perferendis esse enim, expedita eaque ipsa pariatur. Quidem soluta eveniet ex asperiores dolorum id, cum aut tempore quae inventore cumque eum vero explicabo temporibus! Veritatis hic adipisci praesentium reiciendis nam autem facilis nihil vitae animi quo, aliquid, magnam quae, officia at soluta repellat perspiciatis fuga! Beatae quisquam id facere, velit repudiandae illum, et reprehenderit obcaecati adipisci odit iste minus veniam laboriosam atque dignissimos ducimus quibusdam deserunt quos sunt debitis mollitia est perspiciatis. Eum, voluptates voluptatibus consequatur alias itaque ad laudantium, animi sequi quasi impedit modi, qui neque molestias sit perferendis.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                                            Launch demo modal
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iure consequatur dolorum quibusdam autem natus aliquam, laudantium nulla eveniet provident illo voluptates adipisci. Nesciunt labore, modi reprehenderit molestias sit placeat cumque deleniti eos culpa corporis mollitia vitae sunt expedita accusamus totam velit, quasi dolore autem consequuntur sapiente praesentium necessitatibus neque. Rerum corporis ut vel unde aliquid voluptatem repudiandae sapiente harum culpa, eum ab quisquam quam iusto aut natus necessitatibus voluptates perferendis alias, deserunt non. Numquam in consequatur mollitia impedit et quasi, architecto cupiditate ex dolor earum. Iure hic, aspernatur, deleniti eligendi quidem atque vel nesciunt, aut qui quisquam placeat, illum provident ullam officiis ipsam molestias amet distinctio delectus. Est necessitatibus aperiam consequuntur, mollitia! Soluta, eos, assumenda! Harum maiores perspiciatis, sed magni. Est dicta cum laborum quas possimus ipsum deleniti et ad voluptatum amet cumque, ducimus odio quis architecto eligendi numquam nulla autem perferendis sapiente beatae ut tempora ea quia! Doloribus ea praesentium quia non! Nemo ea aliquam nostrum natus nam incidunt in fugit aperiam earum, necessitatibus porro rem molestias fugiat consequuntur ipsam, aut, perspiciatis quam dolores quis deleniti corrupti consectetur harum itaque. Illum commodi iure assumenda sapiente nam iusto facilis accusamus beatae fugiat quia vero natus rerum repudiandae, itaque cupiditate quidem suscipit, esse error aspernatur. Quisquam debitis, omnis labore suscipit veniam totam vel asperiores praesentium eos! Error aliquam natus reiciendis, doloremque, aut voluptates. Ad nobis earum voluptatum autem similique, veniam tempore dolore non aliquid. Saepe quam doloremque, ea at atque iusto unde distinctio sit totam, excepturi praesentium fugiat explicabo repellat dolor ex necessitatibus enim eligendi reiciendis mollitia, expedita maiores consequuntur obcaecati. Perferendis, quaerat eaque enim pariatur quidem beatae. Possimus distinctio earum optio, dignissimos porro blanditiis consequatur quo asperiores voluptate cum totam perferendis labore dolorum fugiat in minus eius dolorem, quibusdam excepturi iusto corporis voluptatibus eaque. Quis voluptas temporibus rerum deleniti tempora in dicta debitis, accusamus nobis quae, ullam delectus explicabo ab aliquam esse qui minima quo veritatis a quos autem voluptatem consectetur, nemo? In nulla, velit fugit quibusdam fuga commodi sunt voluptatem dolore, ad, fugiat, maiores id. Accusantium et laboriosam mollitia facere, molestias nam nostrum ducimus fugiat unde dolorem similique obcaecati impedit voluptates exercitationem porro, suscipit aliquid perferendis eveniet ut dignissimos sequi ipsa ad reiciendis ratione. Animi temporibus rem sit vel quas ipsam iure, libero nisi in quisquam veritatis cum natus odio eaque laborum qui. Odio vero officiis nesciunt laudantium consequuntur voluptate, quo asperiores perferendis. Dolor nam voluptate quasi tempora magnam ducimus, quae. Earum est fugiat, quae aut exercitationem voluptatum, accusamus, rerum fugit repellendus architecto autem quas, ullam error explicabo ratione ipsam eligendi consectetur labore tempore quam officiis perspiciatis iure corrupti! Distinctio obcaecati, veritatis maiores! Optio veritatis doloremque laborum eius maxime, culpa est, rerum dignissimos reiciendis blanditiis labore libero dolore quam quis deleniti quibusdam molestias cupiditate harum modi! Atque officiis pariatur nostrum ipsam illum doloremque nisi iure praesentium, possimus dignissimos molestias recusandae, quam nesciunt aut debitis vero modi accusamus repellat totam qui quas blanditiis consequatur voluptatum! Quasi voluptate dolorum fuga ratione quae, unde est quas, magni accusamus labore at! Numquam.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="md-modal md-effect-1" id="modal-1">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-2" id="modal-2">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-3" id="modal-3">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-4" id="modal-4">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-5" id="modal-5">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-6" id="modal-6">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-7" id="modal-7">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-8" id="modal-8">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-9" id="modal-9">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-10" id="modal-10">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-11" id="modal-11">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-12" id="modal-12">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-13" id="modal-13">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-14" id="modal-14">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-15" id="modal-15">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-16" id="modal-16">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-17" id="modal-17">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-18" id="modal-18">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-19" id="modal-19">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-modal md-effect-20" id="modal-20">
+                                <div class="md-content">
+                                    <h3 class="bg-white text-dark border-bottom">Modal Dialog</h3>
+                                    <div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                        <button class="btn btn-primary md-close">Close me!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md-overlay"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Footer Area -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Footer Area -->
+                                <footer class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
+                                    <!-- Copywrite Text -->
+                                    <div class="copywrite-text">
+                                        <p>Created by @<a href="#">Theme-zome</a></p>
+                                    </div>
+                                    <div class="fotter-icon text-center">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Pinterest">
+                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+
+    <!-- Plugins Js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bundle.js"></script>
+    <script src="js/default-assets/setting.js"></script>
+    <script src="js/default-assets/fullscreen.js"></script>
+
+    <!-- Active JS -->
+    <script src="js/canvas.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/default-assets/active.js"></script>
+
+    <!-- Inject JS -->
+    <script src="js/default-assets/modal-classes.js"></script>
+    <script src="js/default-assets/modaleffects.js"></script>
+
+</body>
+
+</html>
