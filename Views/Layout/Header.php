@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <style>
+    body{
+        font-family: "Montserrat", sans-serif !important;
+    }
     .header {
         padding: 0px 0 !important;
         float: left;
@@ -36,21 +39,21 @@
 
 <body>
     <!-- Preloader Start -->
-    <div id="preloader-active">
+    <!-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
-                    <img style="height: 25%;width: 100%;" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" alt="jobhub" />
+                    <img style="height: 25%;width: 100%;" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" alt="" />
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <header class="header sticky-bar">
         <div class="container">
             <div class="main-header">
                 <div class="header-left">
                     <div class="header-logo">
-                        <a style="height: 25%;width: 50%;" class="d-flex"><img alt="jobhub" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" /></a>
+                        <a href="<?php echo Generic::baseURL(); ?>" style="width: 30%;" class="d-flex mt-10 mb-10"><img alt="" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" /></a>
                     </div>
                     <div class="header-nav">
                         <nav class="nav-main-menu d-none d-xl-block">
@@ -58,11 +61,14 @@
                                 <li>
                                     <a class="active" href="<?php echo Generic::baseURL(); ?>/">Home</a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <a class="active" href="<?php echo Generic::baseURL(); ?>/about-us">About Us</a>
-                                </li> -->
+                                </li>
                                 <li>
                                     <a class="active" href="<?php echo Generic::baseURL(); ?>/contact-us">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="<?php echo Generic::baseURL(); ?>/faq">F.A.Q</a>
                                 </li>
 
                             </ul>
@@ -107,18 +113,21 @@
                                 <li>
                                     <a href="<?php echo Generic::baseURL(); ?>/contact-us">Contact Us</a>
                                 </li>
-                                <div class="mobile-account">
+                                <li>
+                                    <a href="<?php echo Generic::baseURL(); ?>/faq">F.A.Q</a>
+                                </li>
+                                <!-- <div class="mobile-account">
                                     <h6 class="mb-10">Follow Us</h6>
 
                                     <div class="mobile-social-icon mb-50">
                                         <h6 class="mb-25"></h6>
-                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-facebook.svg" alt="jobhub" /></a>
-                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-twitter.svg" alt="jobhub" /></a>
-                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-instagram.svg" alt="jobhub" /></a>
-                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-pinterest.svg" alt="jobhub" /></a>
-                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-youtube.svg" alt="jobhub" /></a>
+                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-facebook.svg" alt="" /></a>
+                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-twitter.svg" alt="" /></a>
+                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-instagram.svg" alt="" /></a>
+                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-pinterest.svg" alt="" /></a>
+                                        <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-youtube.svg" alt="" /></a>
                                     </div>
-                                </div>
+                                </div> -->
                             </ul>
                         </nav>
                         <!-- mobile menu end -->

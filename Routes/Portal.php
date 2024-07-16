@@ -49,4 +49,10 @@ class Portal extends Controller
         $this->view('termsCondition', array());
         $this->layout('Footer');
     }
+    public function faq()
+    {
+        $this->layout('Header');
+        $this->view('faq', array());
+        $this->layout('Footer');
+    }
 }

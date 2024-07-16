@@ -9,7 +9,7 @@
                         <div class="card box-margin">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-20">
-                                    <h6 class="card-title mb-0">Activities List</h6>
+                                    <h6 class="card-title mb-0">User's Activities</h6>
                                     <!-- <button type="button" class="btn btn-primary waves-effect waves-light float-right mb-3" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg">+ Add New</button> -->
                                 </div>
 
@@ -26,20 +26,22 @@
                                         <table class="table table-bordered">
                                             <thead class="text-uppercase">
                                                 <tr>
+                                                <th>Timestamp</th>
+                                                <th>Model Version</th>
+                                                <th>Cow Image</th>
                                                     <th>Cow ID</th>
-                                                    <th>Cow Image</th>
-                                                    <th>User IP</th>
-                                                    <th>Model Used</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>#123</td>
-                                                    <td class="image-cell">
-                                                        <img src="https://placehold.co/400x300" alt="" class="img-fluid">
+                                                <td>
+                                                        01-01-2024 00:00
                                                     </td>
-                                                    <td>192.168.10.221</td>
-                                                    <td>Model Used</td>
+                                                <td>v1.0.0</td>
+                                                    <td>
+                                                        <a href="#!">Picture</a>
+                                                    </td>
+                                                    <td>#0</td>
                                                 </tr>
                                             </tbody>
                                         </table>

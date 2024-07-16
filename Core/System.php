@@ -110,7 +110,7 @@ class System
                 }
 
                 if (!defined('PROJECT_NAME')) {
-                    define('PROJECT_NAME', 'Weaver v1.0.0');
+                    define('PROJECT_NAME', 'Cow Identifier v1.0');
                 }
             }
         } catch (Exception_ $e) {

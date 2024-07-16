@@ -16,6 +16,7 @@ $projectRoutes = array(
     'about-us' => 'Portal@about',
     'privacy' => 'Portal@privacy',
     'terms-and-condition' => 'Portal@terms_condition',
+    'faq' => 'Portal@faq',
 
 
     /* Admin Routes */
@@ -23,7 +24,7 @@ $projectRoutes = array(
     'admin' => 'Admin@admin_login',
     'users' => 'Admin@users',
     'activities' => 'Admin@activities',
-    'models' => 'Admin@models',
+    'ai-models' => 'Admin@models',
     'account-settings' => 'Admin@accountSettings',
     'settings' => 'Admin@settings',
     'sign-out' => 'Admin@signOut',

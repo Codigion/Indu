@@ -16,12 +16,12 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h6 class="text-uppercase font-14">
-                                        Total Activities
+                                        Users
                                     </h6>
 
                                     <!-- Heading -->
                                     <span class="font-24 text-dark mb-0">
-                                        2500
+                                        0
                                     </span>
                                 </div>
 
@@ -44,11 +44,11 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h6 class="font-14 text-uppercase">
-                                        Total Files Uploaded
+                                        Cow Pictures
                                     </h6>
                                     <!-- Heading -->
                                     <span class="font-24 text-dark mb-0">
-                                        1500
+                                        0
                                     </span>
                                 </div>
                                 <div class="col-auto">
@@ -71,11 +71,11 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h6 class="font-14 text-uppercase">
-                                        Unquie Users
+                                        Unquie Visitors
                                     </h6>
                                     <!-- Heading -->
                                     <span class="font-24 text-dark">
-                                        100
+                                        0
                                     </span>
                                 </div>
                                 <div class="col-auto">
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 box-margin height-card">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Latest Update</h5>
+                            <!-- <h5 class="card-title">Latest Update</h5> -->
                             <div class="transaction-area">
                               
                                 <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
@@ -129,23 +129,7 @@
                                     </div>
 
                                     <div class="amount txt-gray-5">
-                                        <p class="mb-0">79,496</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
-                                    <div class="media d-flex justify-content-center align-items-center">
-                                        <div class="icon-section bg-danger-soft">
-                                            <i class="icon-wallet"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="mb-1 font-15">Click Through</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="amount txt-gray-5">
-                                        <p class="mb-0">4,76,8294</p>
+                                        <h5 class="mb-0">0</h5>
                                     </div>
                                 </div>
                             </div>
