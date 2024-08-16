@@ -18,6 +18,8 @@ class Admin extends Controller
 
     public function dashboard()
     {
+        self::checkSession();
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'dashboard'));
         $this->view('admin/dashboard', array());
@@ -26,6 +28,8 @@ class Admin extends Controller
 
     public function users()
     {
+        self::checkSession();
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'users'));
         $this->view('admin/users', array());
@@ -34,36 +38,71 @@ class Admin extends Controller
 
     public function activities()
     {
+        self::checkSession();
+
+        $result = System::loadModel('UsersModel')->getUserDetails(Request::get('id'));
+        if (empty($result[0])) {
+            header("Location: " . Generic::baseURL());
+        }
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'activities'));
-        $this->view('admin/activities', array());
+        $this->view('admin/activities', array('activities' => $result));
         $this->layout('admin/Footer');
     }
 
     public function models()
     {
+        self::checkSession();
+
+        $result = System::loadModel('ModelsModel')->getAllModel();
+        if (empty($result[0])) {
+            header("Location: " . Generic::baseURL());
+        }
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'models'));
-        $this->view('admin/models', array());
+        $this->view('admin/models', array('models' => $result));
         $this->layout('admin/Footer');
     }
 
-    public function settings()
+    public function database()
     {
+        self::checkSession();
+
         $this->layout('admin/Header');
-        $this->layout('admin/Nav', array('nav' => 'settings'));
-        $this->view('admin/settings', array());
+        $this->layout('admin/Nav', array('nav' => 'database'));
+        $this->view('admin/database', array());
         $this->layout('admin/Footer');
     }
     public function accountSettings()
     {
+        self::checkSession();
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'accountSettings'));
         $this->view('admin/accountSettings', array());
         $this->layout('admin/Footer');
     }
+    public function modelSettings()
+    {
+
+        self::checkSession();
+
+        $result = System::loadModel('SettingsModel')->getAllSetting();
+        if (empty($result[0])) {
+            header("Location: " . Generic::baseURL());
+        }
+
+        $this->layout('admin/Header');
+        $this->layout('admin/Nav', array('nav' => 'modelSettings'));
+        $this->view('admin/modelSettings', array('settings' => $result[0]));
+        $this->layout('admin/Footer');
+    }
     public function contacted()
     {
+        self::checkSession();
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'contacted'));
         $this->view('admin/contacted', array());
@@ -72,14 +111,16 @@ class Admin extends Controller
 
     public function signOut()
     {
-        header("Location: " . Generic::baseURL());
+        Session::unset('uid');
+        Session::unset('email');
+        Session::unset('role');
+        Session::destroy();
+        header("Location: " . Generic::baseURL() . "/admin");
     }
+
     public static function checkSession()
     {
         if (!Session::has('uid')) {
-            header("Location: " . Generic::baseURL());
-        }
-        if (!Session::has('role')) {
             header("Location: " . Generic::baseURL());
         }
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Generic Class
  *
@@ -79,5 +80,20 @@ class Generic
         $baseUrl = rtrim($protocol . $host, '/') . dirname($script);
 
         return $baseUrl;
+    }
+
+    /**
+     * Clean incomplete file uploads by unlinking the specified file paths.
+     *
+     * @param array $filePaths An array of file paths to unlink.
+     * @return void
+     */
+    public static function cleanIncompleteFileUpload($filePaths)
+    {
+        foreach ($filePaths as $path) {
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
     }
 }

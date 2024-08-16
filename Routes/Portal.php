@@ -10,6 +10,9 @@ class Portal extends Controller
 
     public function index()
     {
+
+        self::checkSession();
+
         $this->layout('Header');
         $this->view('Welcome', array());
         $this->layout('Footer');
@@ -17,8 +20,15 @@ class Portal extends Controller
 
     public function activity()
     {
+
+
+        $result = System::loadModel('ModelsModel')->getActiveModel();
+        if (empty($result[0])) {
+            header("Location: " . Generic::baseURL() . "/404");
+        }
+
         $this->layout('Header');
-        $this->view('activity', array());
+        $this->view('activity', array('models' => $result));
         $this->layout('Footer');
     }
 
@@ -51,8 +61,24 @@ class Portal extends Controller
     }
     public function faq()
     {
+
         $this->layout('Header');
         $this->view('faq', array());
         $this->layout('Footer');
+    }
+    public function notFound()
+    {
+
+        $this->layout('Header');
+        $this->view('404', array());
+        $this->layout('Footer');
+    }
+
+
+    public static function checkSession()
+    {
+        if (Cookie::cookieExists('cid')) {
+            header("Location: " . Generic::baseURL() . "/activity");
+        }
     }
 }

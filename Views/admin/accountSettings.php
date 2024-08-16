@@ -16,7 +16,7 @@
                                <div class="col-sm-6">
                                    <div class="form-group">
                                        <label class="control-label">Old Password</label>
-                                       <input type="text" class="form-control" placeholder="superadmin">
+                                       <input type="text" class="form-control" placeholder="Old Password">
                                    </div>
                                </div>
                                <div class="col-sm-6">

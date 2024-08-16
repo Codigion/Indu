@@ -16,7 +16,28 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon4">Q</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Search.." aria-describedby="basic-addon2">
+                                    <input class="form-control" type="text" onkeyup="searchUser(this)" placeholder="Search .." />
+                                    <script>
+                                        function searchUser(event) {
+                                            new HTTP().ajaxRequest(
+                                                '',
+                                                'search=' + event.value,
+                                                'GetAllUsers',
+                                                function(response) {
+                                                    $("#dataArea").html('');
+
+
+                                                    if (!response['err']) {
+                                                        setData(response['dat'])
+                                                    } else {
+                                                        $("#dataArea").html('<tr><th colspan="6">No results found.</th></tr>')
+                                                    }
+                                                },
+                                                'x',
+                                                'x'
+                                            );
+                                        }
+                                    </script>
                                 </div>
                                 <div class="basic-table-area">
                                     <!--Basic Table-->
@@ -27,13 +48,12 @@
                                                     <th>Timestamp</th>
                                                     <th>Name</th>
                                                     <th>No. Requests</th>
-                                                    <!-- <th>Phone Number</th> -->
-                                                    <!-- <th>Email</th> -->
                                                     <th>Activities</th>
                                                 </tr>
                                             </thead>
+                                            <tbody id="dataArea"></tbody>
 
-                                            <tbody>
+                                            <!-- <tbody>
 
                                                 <tr>
                                                     <td>
@@ -42,21 +62,16 @@
                                                     <td>
                                                         <h4 class="h6 g-mb-2">John Doe.</h4>
                                                     </td>
-                                                    <td><h4 class="h6 g-mb-2">0</h4></td>
-                                                    <!-- <td>00000-00000</td> -->
-                                                    <!-- <td class="align-middle">
-                                                        <div class="d-flex">
-                                                            <i class="fa fa-email mr-2 font-16" aria-hidden="true"></i>
-                                                            <span>john@gmail.com</span>
-                                                        </div>
-                                                    </td> -->
+                                                    <td>
+                                                        <h4 class="h6 g-mb-2">0</h4>
+                                                    </td>
                                                     <td>
                                                         <a class="btn btn-outline-primary btn-sm" href="<?php echo Generic::baseURL(); ?>/activities">
                                                             View Details
                                                         </a>
                                                     </td>
                                                 </tr>
-                                            </tbody>
+                                            </tbody> -->
                                         </table>
                                     </div>
                                     <!--End Basic Table-->
@@ -68,3 +83,42 @@
                 </div>
             </div>
             </div>
+
+            <script>
+                new HTTP().ajaxRequest(
+                    '',
+                    '',
+                    'GetAllUsers',
+                    function(response) {
+
+                        if (!response['err']) {
+                            setData(response['dat'])
+                        } else {
+                            $("#dataArea").html('<tr><th colspan="6">No results found.</th></tr>')
+                        }
+                    },
+                    'x',
+                    'x'
+                );
+
+                function setData(data) {
+                    data.forEach(function(item) {
+                        let quantityColor = '';
+                        // if (parseInt(item.available_quantity) <= parseInt(item.re_order_level))
+                        //     quantityColor = 'text-danger';
+
+                        $("#dataArea").append(`
+                        <tr>
+                            <td>` + item.timestamp + `</td>
+                            <td>` + item.name +  `</td>
+                            <td>` + item.no_requests + `</td>
+                            <td>
+                                <a class="btn btn-outline-primary btn-sm" href="<?php echo Generic::baseURL(); ?>/activities?id=` + item.user_id + `">
+                                    View Details
+                                </a>
+                            </td>
+                        </tr>
+                    `);
+                    });
+                }
+            </script>

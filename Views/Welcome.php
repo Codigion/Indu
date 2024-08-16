@@ -34,17 +34,38 @@
 
                 <small>ICAR National Dairy Research Institute, Karnal</small>
                 <p class="mt-20">Our AI-powered application identifies individual cows using unique muzzle features, streamlining the process of capturing, processing, and matching images for accurate and efficient livestock management.</p>
-            <br>
-            <br>
+                <br>
+                <br>
             </div>
             <div class="box-newsletter mt-30">
                 <div class="box-form-newsletter">
-                    <form class="form-newsletter">
-                        <input type="text" class="input-newsletter" value="" placeholder="Your Full Name!" />
-                        <a href="<?php echo Generic::baseURL(); ?>/activity" class="btn btn-default">TRY</a>
+                    <form action="#!"  id="tryNowForm">
+                        <input type="text" class="input-newsletter" name="name" placeholder="Your Full Name!" />
+                        <!-- <a href="<?php echo Generic::baseURL(); ?>/activity" class="btn btn-default">TRY</a> -->
+                        <a id="tryNowBtn" class="btn btn-default">TRY</a>
                     </form>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div id="loading" class="loading-spinner"></div>
+                        <div id="response"></div>
+                    </div>
                 </div>
             </div>
+            <script>
+                new HTTP().bindAjax({
+                    btnID: 'tryNowBtn',
+                    formID: 'tryNowForm',
+                    extraParameters: '',
+                    controllerRoute: 'TryNow',
+                    callbackFunction: function(response) {
+                        if (!response['err']) {
+                            window.location.href = "<?= Generic::baseURL(); ?>/activity";
+                        }
+                    },
+                    responseID: 'response',
+                    loadingID: 'loading'
+                });
+            </script>
+
             <div class="box-newsletter-bottom">
                 <div class="newsletter-bottom"></div>
             </div>

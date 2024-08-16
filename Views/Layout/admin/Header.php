@@ -15,6 +15,11 @@
 
     <!-- Plugins css -->
     <link rel="stylesheet" href="c<?php echo Generic::baseURL(); ?>/Assets/admin/ss/default-assets/mini-event-calendar.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="<?= Generic::baseURL(); ?>/Assets/css/Master.css">
+    <script src="<?= Generic::baseURL(); ?>/Assets/js/Master.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css" rel="stylesheet">
 
     <!-- Master Stylesheet CSS -->
     <link rel="stylesheet" href="<?php echo Generic::baseURL(); ?>/Assets/admin/style.css">

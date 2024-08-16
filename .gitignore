@@ -10,3 +10,9 @@
 # Ignore directories
 # Note: You should have a leading "/" for directory names
 /Assets/Uploads/
+/Assets/admin/models/versions/*
+/Assets/uploads/COW_Picture/*
+/Assets/uploads/COW_Picture/muzzle/*
+
+docs/
+

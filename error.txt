@@ -1,0 +1,27 @@
+/usr/bin/python3: symbol lookup error: /usr/bin/python3: undefined symbol: XML_SetHashSalt
+/usr/bin/python3: symbol lookup error: /usr/bin/python3: undefined symbol: XML_SetHashSalt
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+{"error": "in user code:\n\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2169, in predict_function  *\n        return step_function(self, iterator)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2155, in step_function  **\n        outputs = model.distribute_strategy.run(run_step, args=(data,))\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2143, in run_step  **\n        outputs = model.predict_step(data)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2111, in predict_step\n        return self(x, training=False)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/utils/traceback_utils.py\", line 70, in error_handler\n        raise e.with_traceback(filtered_tb) from None\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/input_spec.py\", line 298, in assert_input_compatibility\n        raise ValueError(\n\n    ValueError: Input 0 of layer \"model\" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 301, 3)\n"}{"error": "in user code:\n\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2169, in predict_function  *\n        return step_function(self, iterator)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2155, in step_function  **\n        outputs = model.distribute_strategy.run(run_step, args=(data,))\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2143, in run_step  **\n        outputs = model.predict_step(data)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2111, in predict_step\n        return self(x, training=False)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/utils/traceback_utils.py\", line 70, in error_handler\n        raise e.with_traceback(filtered_tb) from None\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/input_spec.py\", line 298, in assert_input_compatibility\n        raise ValueError(\n\n    ValueError: Input 0 of layer \"model\" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 301, 3)\n"}{"error": "attempt to get argmax of an empty sequence"}{"error": "attempt to get argmax of an empty sequence"}{"error": "attempt to get argmax of an empty sequence"}{"error": "attempt to get argmax of an empty sequence"}usage: model.py [-h] -i IMAGE -y YOLO_MODEL -c COW_ID_MODEL -m MAPPING_FILE
+                [-t TEMPERATURE] [-th THRESHOLD]
+model.py: error: argument -t/--temperature: expected one argument
+usage: model.py [-h] -i IMAGE -y YOLO_MODEL -c COW_ID_MODEL -m MAPPING_FILE
+                [-t TEMPERATURE] [-th THRESHOLD]
+model.py: error: argument -t/--temperature: expected one argument
+{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Cow ID prediction failed. Please check the model."}

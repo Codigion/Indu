@@ -12,7 +12,7 @@
                     <div class="cube"></div>
                     <div class="cube"></div>
                     <div class="cube"></div>
-                     <div class="cube"></div>
+                    <div class="cube"></div>
                 </div>
                 <div class="col-sm-10 col-md-8 col-lg-5">
                     <!-- Middle Box -->
@@ -22,17 +22,21 @@
 
                                 <!-- Logo -->
                                 <h4 class="font-24 mb-30">Login.</h4>
-                                <form action="#">
+                                <form action="#" id="signInForm">
                                     <div class="form-group">
-                                        <input class="form-control login" type="text" id="emailaddress" placeholder="Enter your email">
+                                        <input name="email" class="form-control login" type="text" id="emailaddress" placeholder="Enter your email">
                                     </div>
 
                                     <div class="form-group">
-                                        <input class="form-control login" type="password" id="password" placeholder="Enter your password">
+                                        <input name="password" class="form-control login" type="password" id="password" placeholder="Enter your password">
+                                    </div>
+                                    <div class="text-right">
+                                        <div id="loading" class="loading-spinner"></div>
+                                        <div id="response"></div>
                                     </div>
 
                                     <div class="form-group mb-0">
-                                        <a href="<?php echo Generic::baseURL(); ?>/dashboard" class="btn btn-primary btn-block"> Log In </a>
+                                        <a id="signInBtn"  class="btn btn-primary btn-block"> Log In </a>
                                     </div>
                                 </form>
 
@@ -44,7 +48,21 @@
             </div>
         </div>
     </div>
-
+    <script>
+        new HTTP().bindAjax({
+            btnID: 'signInBtn',
+            formID: 'signInForm',
+            extraParameters: '',
+            controllerRoute: 'Authenticate',
+            callbackFunction: function(response) {
+                if (!response['err']) {
+                    window.location.href = "<?= Generic::baseURL(); ?>/dashboard";
+                }
+            },
+            responseID: 'response',
+            loadingID: 'loading'
+        });
+    </script>
     <!-- ======================================
     ********* Page Wrapper Area End ***********
     ======================================= -->
@@ -58,6 +76,6 @@
     <!-- Active JS -->
     <script src="<?php echo Generic::baseURL(); ?>/Assets/admin/js/default-assets/active.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Weaver Framework - File Handling Class
  *
@@ -88,6 +89,55 @@ class File
             }
         } catch (Exception_ $e) {
             System::displayErrorPage($e);
+        }
+    }
+
+    /**
+     * Creates a directory at a specified location with a given name.
+     *
+     * @param string $folderName The name of the folder to create.
+     * @param string $relativeLocation The location where the folder should be created.
+     * @return string The full path of the created directory or an error message.
+     */
+    public static function createDirectory($folderName, $relativeLocation)
+    {
+        try {
+            // Validate inputs
+            $folderName = trim($folderName);
+            $relativeLocation = trim($relativeLocation);
+
+            if (empty($folderName) || empty($relativeLocation)) {
+                throw new Exception_('Folder name and location cannot be empty.');
+            }
+
+            // Sanitize folder name and location
+            $folderName = basename($folderName); // Removes any path components
+            $relativeLocation = rtrim($relativeLocation, '/\\'); // Remove trailing slashes or backslashes
+
+            // Define the full path to the new directory
+            $basePath = dirname(__DIR__); // Assumes this script is in a subdirectory and goes up one level to the base path
+            $fullPath = $basePath . '/' . $relativeLocation . '/' . $folderName;
+
+            // Check if the directory already exists
+            if (is_dir($fullPath)) {
+                throw new Exception_('The directory already exists: ' . $fullPath);
+            }
+
+            // Ensure the parent location is a valid directory
+            $parentPath = dirname($fullPath);
+            if (!is_dir($parentPath)) {
+                throw new Exception_('The specified location does not exist or is not a directory: ' . $parentPath);
+            }
+
+            // Attempt to create the directory
+            if (mkdir($fullPath, 0755, true)) {
+                return $fullPath;
+            } else {
+                throw new Exception_('Failed to create directory at: ' . $fullPath);
+            }
+        } catch (Exception_ $e) {
+            // Handle the exception and return an error message
+            return "Error: " . $e->getMessage();
         }
     }
 

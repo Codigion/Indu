@@ -9,6 +9,28 @@
 
 // Define the project routes
 $projectRoutes = array(
+
+    /* Controller Routes */
+    'Authenticate' => 'AuthenticationController@signIn',
+    'SignOut' => 'AuthenticationController@signOut',
+
+    'TryNow' => 'UsersController@tryNow',
+    'IdentifyCow' => 'UsersController@identifyCow',
+   
+   
+    'UpdateSettings' => 'SettingsController@updateSettings',
+    
+    'AddModel' => 'ModelsController@addModel',
+    'ChangeStatus' => 'ModelsController@changeStatus',
+    'DeleteModel' => 'ModelsController@deleteModel',
+
+    
+    'GetAllDatabase' => 'DatabaseController@getAllDatabase',
+
+    'GetAllUsers' => 'UsersController@getAllUsers',
+
+
+
     /* Portal Routes */
     '/' => 'Portal@Index',
     'activity' => 'Portal@activity',
@@ -17,6 +39,7 @@ $projectRoutes = array(
     'privacy' => 'Portal@privacy',
     'terms-and-condition' => 'Portal@terms_condition',
     'faq' => 'Portal@faq',
+    '404' => 'Portal@notFound',
 
 
     /* Admin Routes */
@@ -26,11 +49,12 @@ $projectRoutes = array(
     'activities' => 'Admin@activities',
     'ai-models' => 'Admin@models',
     'account-settings' => 'Admin@accountSettings',
-    'settings' => 'Admin@settings',
+    'database' => 'Admin@database',
     'sign-out' => 'Admin@signOut',
+    'model-setting' => 'Admin@modelSettings',
     'contacted' => 'Admin@contacted',
 
-    
+
     /* Controller Routes */
 
 

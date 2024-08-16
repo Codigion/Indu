@@ -26,23 +26,33 @@
                                         <table class="table table-bordered">
                                             <thead class="text-uppercase">
                                                 <tr>
-                                                <th>Timestamp</th>
-                                                <th>Model Version</th>
-                                                <th>Cow Image</th>
+                                                    <th>Timestamp</th>
+                                                    <th>Model Name / Version</th>
+                                                    <th>Cow Image</th>
+                                                    <th>Cow Muzzle</th>
                                                     <th>Cow ID</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                <td>
-                                                        01-01-2024 00:00
-                                                    </td>
-                                                <td>v1.0.0</td>
-                                                    <td>
-                                                        <a href="#!">Picture</a>
-                                                    </td>
-                                                    <td>#0</td>
-                                                </tr>
+                                                <?php foreach ($activities as $activity) : ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?= $activity->timestamp; ?>
+                                                        </td>
+                                                        <td>
+
+                                                            <?= $activity->model_name; ?> /(<?= $activity->model_version; ?>)
+                                                        </td>
+                                                        <td>
+                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/<?= $activity->picture_orginal ?>" > Picture  </a>
+                                                        </td>
+                                                        <td>
+                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/muzzle/<?= $activity->picture_muzzle ?>" >Picture  </a>
+                                                        </td>
+
+                                                        <td>#<?= $activity->cow_id; ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>

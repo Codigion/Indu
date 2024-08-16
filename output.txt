@@ -1,0 +1,65 @@
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 4s 4s/step
+{
+    "predicted_id": "2985",
+    "confidence": 0.83
+}
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 4s 4s/step
+{
+    "predicted_id": "2985",
+    "confidence": 0.83
+}
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 3s 3s/step
+{
+    "predicted_id": "2732",
+    "confidence": 1.0
+}
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 3s 3s/step
+{
+    "predicted_id": "2732",
+    "confidence": 1.0
+}
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 3s 3s/step
+{
+    "predicted_id": "2732",
+    "confidence": 1.0
+}
+{"predicted_id": "2732", "confidence": 1.0}
+{"error": "in user code:\n\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2169, in predict_function  *\n        return step_function(self, iterator)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2155, in step_function  **\n        outputs = model.distribute_strategy.run(run_step, args=(data,))\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2143, in run_step  **\n        outputs = model.predict_step(data)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2111, in predict_step\n        return self(x, training=False)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/utils/traceback_utils.py\", line 70, in error_handler\n        raise e.with_traceback(filtered_tb) from None\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/input_spec.py\", line 298, in assert_input_compatibility\n        raise ValueError(\n\n    ValueError: Input 0 of layer \"model\" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 301, 3)\n"}
+{"error": "in user code:\n\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2169, in predict_function  *\n        return step_function(self, iterator)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2155, in step_function  **\n        outputs = model.distribute_strategy.run(run_step, args=(data,))\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2143, in run_step  **\n        outputs = model.predict_step(data)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2111, in predict_step\n        return self(x, training=False)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/utils/traceback_utils.py\", line 70, in error_handler\n        raise e.with_traceback(filtered_tb) from None\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/input_spec.py\", line 298, in assert_input_compatibility\n        raise ValueError(\n\n    ValueError: Input 0 of layer \"model\" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 301, 3)\n"}
+{"error": "in user code:\n\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2169, in predict_function  *\n        return step_function(self, iterator)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2155, in step_function  **\n        outputs = model.distribute_strategy.run(run_step, args=(data,))\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2143, in run_step  **\n        outputs = model.predict_step(data)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/training.py\", line 2111, in predict_step\n        return self(x, training=False)\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/utils/traceback_utils.py\", line 70, in error_handler\n        raise e.with_traceback(filtered_tb) from None\n    File \"/home/anjani0x41/.local/lib/python3.10/site-packages/keras/engine/input_spec.py\", line 298, in assert_input_compatibility\n        raise ValueError(\n\n    ValueError: Input 0 of layer \"model\" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 301, 3)\n"}
+{"predicted_id": "2732", "confidence": 1.0}
+{"predicted_id": "2985", "confidence": 0.83}
+{"predicted_id": "2732", "confidence": 1.0}
+{"predicted_id": "2732", "confidence": 1.0}
+{"predicted_id": "2834", "confidence": 1.0}
+{"cow_id": "2908", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2908", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2908", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2908", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2834", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2834", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2908", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2592", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2694", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2886", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2906", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2849", "confidence_score": 0.74, "temperature": 0.5, "threshold": 0.5, "quality": "Good"}
+{"cow_id": "2899", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2901", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2694", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2900", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2900", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2834", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "2686", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "2998", "confidence_score": 0.75, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "2822", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "2884", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2998", "confidence_score": 0.75, "temperature": 0.5, "threshold": 0.8, "quality": "Good"}
+{"cow_id": "2689", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "2998", "confidence_score": 0.75, "temperature": 0.5, "threshold": 0.8, "quality": "Good"}
+{"cow_id": "2830", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Poor"}
+{"cow_id": "3012", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Very Good"}
+{"cow_id": "2910", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Very Good"}
+{"cow_id": "2905", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2998", "confidence_score": 0.75, "temperature": 0.5, "threshold": 0.8, "quality": "Good"}
+{"cow_id": "2884", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}

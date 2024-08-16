@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <style>
-    body{
+    body {
         font-family: "Montserrat", sans-serif !important;
     }
+
     .header {
         padding: 0px 0 !important;
         float: left;
@@ -30,6 +31,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo Generic::baseURL(); ?>/Assets/logo.png" />
     <!-- Template CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1ov7tLJXh9IYsRwzUeWbMnVfFvqU8iFVcCnN" crossorigin="anonymous">
+    <!-- Custom -->
+    <link rel="stylesheet" href="<?= Generic::baseURL(); ?>/Assets/css/Master.css">
+    <script src="<?= Generic::baseURL(); ?>/Assets/js/Master.js"></script>
 
     <link rel="stylesheet" href="<?php echo Generic::baseURL(); ?>/Assets/css/plugins/animate.min.css" />
     <link rel="stylesheet" href="<?php echo Generic::baseURL(); ?>/Assets/css/main.css?v=1.0" />

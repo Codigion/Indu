@@ -98,7 +98,7 @@ class System
                 }
 
                 if (!defined('MYSQL_DATABASE')) {
-                    define('MYSQL_DATABASE', 'phpmyadmin');
+                    define('MYSQL_DATABASE', 'indu');
                 }
 
                 if (!defined('SENDER_EMAIL')) {
