@@ -63,3 +63,8 @@
 {"cow_id": "2905", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
 {"cow_id": "2998", "confidence_score": 0.75, "temperature": 0.5, "threshold": 0.8, "quality": "Good"}
 {"cow_id": "2884", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.8, "quality": "Excellent"}
+{"cow_id": "2984", "confidence_score": 0.46, "temperature": 0.5, "threshold": 0.5, "quality": "Fair"}
+{"cow_id": "2900", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2834", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Poor"}
+{"cow_id": "2830", "confidence_score": 0.42, "temperature": 0.5, "threshold": 0.5, "quality": "Fair"}
+{"cow_id": "2900", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}

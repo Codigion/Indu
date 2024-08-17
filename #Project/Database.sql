@@ -9,6 +9,7 @@
 CREATE TABLE models(
     id int(11) auto_increment primary key,
 
+    name varchar(20),
     version varchar(20),
     yolo varchar(150),
     resnet50 varchar(150),
@@ -63,6 +64,7 @@ CREATE TABLE settings(
 
 	updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  
 );
+INSERT INTO `settings` (`threshold`, `temperature`, `updated_at`) VALUES ( 0.5, 0.5, current_timestamp());
 
 
 
@@ -83,6 +85,17 @@ CREATE TABLE administrator(
 -- Insert Query: Administrator User
 INSERT INTO `administrator` (`id`,  `email`, `password`,`role`,`status`, `created_at`, `updated_at`) VALUES (NULL, 'admin', md5('admin'),'s', '1', current_timestamp(), current_timestamp());
 
+
+
+-- Visitor's Log
+CREATE TABLE visitor(
+	id int(11) auto_increment primary key,
+	page text,
+    ip_address varchar(128),
+    user_agent text,
+    referrer text,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP
+);
 
 
 

@@ -10,6 +10,7 @@ class Portal extends Controller
 
     public function index()
     {
+        self::logSession();
 
         self::checkSession();
 
@@ -20,6 +21,8 @@ class Portal extends Controller
 
     public function activity()
     {
+        self::logSession();
+
 
 
         $result = System::loadModel('ModelsModel')->getActiveModel();
@@ -34,6 +37,8 @@ class Portal extends Controller
 
     public function contact()
     {
+        self::logSession();
+
         $this->layout('Header');
         $this->view('contact', array());
         $this->layout('Footer');
@@ -41,6 +46,8 @@ class Portal extends Controller
 
     public function about()
     {
+        self::logSession();
+
         $this->layout('Header');
         $this->view('about', array());
         $this->layout('Footer');
@@ -48,6 +55,8 @@ class Portal extends Controller
 
     public function privacy()
     {
+        self::logSession();
+
         $this->layout('privacy');
         $this->view('contact', array());
         $this->layout('Footer');
@@ -55,12 +64,15 @@ class Portal extends Controller
 
     public function terms_condition()
     {
+        self::logSession();
+
         $this->layout('Header');
         $this->view('termsCondition', array());
         $this->layout('Footer');
     }
     public function faq()
     {
+        self::logSession();
 
         $this->layout('Header');
         $this->view('faq', array());
@@ -68,6 +80,7 @@ class Portal extends Controller
     }
     public function notFound()
     {
+        self::logSession();
 
         $this->layout('Header');
         $this->view('404', array());
@@ -80,5 +93,13 @@ class Portal extends Controller
         if (Cookie::cookieExists('cid')) {
             header("Location: " . Generic::baseURL() . "/activity");
         }
+    }
+
+    /**
+     * Log Session
+     */
+    public function logSession()
+    {
+        System::loadModel('DashboardModel')->logVisitor();
     }
 }

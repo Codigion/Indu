@@ -20,9 +20,11 @@ class Admin extends Controller
     {
         self::checkSession();
 
+        $result = System::loadModel('DashboardModel')->getStats();
+
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'dashboard'));
-        $this->view('admin/dashboard', array());
+        $this->view('admin/dashboard', $result);
         $this->layout('admin/Footer');
     }
 
@@ -56,10 +58,7 @@ class Admin extends Controller
         self::checkSession();
 
         $result = System::loadModel('ModelsModel')->getAllModel();
-        if (empty($result[0])) {
-            header("Location: " . Generic::baseURL());
-        }
-
+      
         $this->layout('admin/Header');
         $this->layout('admin/Nav', array('nav' => 'models'));
         $this->view('admin/models', array('models' => $result));

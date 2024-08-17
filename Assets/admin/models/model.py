@@ -45,7 +45,7 @@ def detect_muzzle(yolo_model, cow_image):
         return muzzle_image, bbox_size, max_confidence, None
     except Exception as e:
         logging.error(f"Error detecting muzzle: {e}")
-        return None, None, json.dumps({"error": "Muzzle detection failed. Please check the image and model."})
+        return None, None, None , json.dumps({"error": "Muzzle detection failed. Please check the image and model."})
 
 def crop_image_center(image, crop_percentage_width=0.20, crop_percentage_height=0.20):
     try:
@@ -114,15 +114,15 @@ def determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score):
 
         # Adjusted thresholds
         if bbox_size > 25000 and sharpness > 200 and confidence_score > 0.7:
-            return "Excellent"
+            return "Excellent",None
         elif bbox_size > 20000 and sharpness > 150 and confidence_score > 0.6:
-            return "Very Good"
+            return "Very Good" , None
         elif bbox_size > 15000 and sharpness > 100 and confidence_score > 0.5:
-            return "Good"
+            return "Good", None
         elif bbox_size > 10000 and sharpness > 50 and confidence_score > 0.4:
-            return "Fair"
+            return None , json.dumps({"error": "Muzzle detection failed. Please check the image and model."})
         else:
-            return "Poor"
+            return "Poor" , None 
     except Exception as e:
         logging.error(f"Error determining image quality: {e}")
         return "Unknown"
@@ -175,8 +175,12 @@ def main(args):
             return
 
         # Determine quality based on muzzle detection
-        quality = determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score)
-    
+        quality , error = determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score)
+        if error:
+            sys.stderr.write(error)
+            return
+        
+        
         # Now, use the color image for further processing if needed
         # For demonstration, let's save the color image to a file
         cv2.imwrite('color_file.png', color_muzzle_image)

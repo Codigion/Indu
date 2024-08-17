@@ -1,9 +1,10 @@
 <!-- partial -->
 <style>
     .height-card {
-        display:contents;
+        display: contents;
     }
 </style>
+
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="container-fluid">
@@ -21,7 +22,7 @@
 
                                     <!-- Heading -->
                                     <span class="font-24 text-dark mb-0">
-                                        0
+                                        <?= $statistics->total_users; ?>
                                     </span>
                                 </div>
 
@@ -47,8 +48,8 @@
                                         Cow Pictures
                                     </h6>
                                     <!-- Heading -->
-                                    <span class="font-24 text-dark mb-0">
-                                        0
+                                    <span class="font-24 text- mb-0">
+                                        <?= $statistics->total_cow_pictures; ?>
                                     </span>
                                 </div>
                                 <div class="col-auto">
@@ -75,7 +76,7 @@
                                     </h6>
                                     <!-- Heading -->
                                     <span class="font-24 text-dark">
-                                        0
+                                        <?= $statistics->unique_visitors; ?>
                                     </span>
                                 </div>
                                 <div class="col-auto">
@@ -117,7 +118,7 @@
                         <div class="card-body">
                             <!-- <h5 class="card-title">Latest Update</h5> -->
                             <div class="transaction-area">
-                              
+
                                 <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
                                     <div class="media d-flex justify-content-center align-items-center">
                                         <div class="icon-section bg-danger-soft">
@@ -129,10 +130,97 @@
                                     </div>
 
                                     <div class="amount txt-gray-5">
-                                        <h5 class="mb-0">0</h5>
+                                        <h5 class="mb-0">
+                                            <?= $statistics->total_page_views; ?>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <style>
+                    #order-summary-chart .apexcharts-line {
+                        stroke: #5867dd !important;
+                        /* Force the line color */
+                    }
+
+                    #order-summary-chart .apexcharts-tooltip {
+                        visibility: visible !important;
+                        /* Ensure tooltips are visible */
+                    }
+                </style>
+                <script>
+                    var seriesData = <?= json_encode($series); ?>;
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Define the color variables
+                        var e = '#5867dd'; // Primary color for the chart lines
+                        var o = '#1dc9b7'; // Axis label color
+
+                        // Debugging: Log to ensure colors are correct
+                        console.log("Primary color:", e);
+                        console.log("Axis label color:", o);
+
+                        var l = {
+                            chart: {
+                                height: 270,
+                                type: "line",
+                                stacked: false,
+                                toolbar: {
+                                    show: false
+                                },
+                                sparkline: {
+                                    enabled: false // Changed to false for full chart rendering
+                                }
+                            },
+                            colors: [e, e], // Ensure the colors array is correctly applied
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                curve: "smooth",
+                                width: 2.5,
+                                dashArray: [0, 8]
+                            },
+                            fill: {
+                                type: "gradient",
+                                gradient: {
+                                    inverseColors: false,
+                                    shade: "light",
+                                    type: "vertical",
+                                    gradientToColors: ["#E2ECFF", e],
+                                    opacityFrom: 0.7,
+                                    opacityTo: 0.6,
+                                    stops: [0, 80, 100]
+                                }
+                            },
+                            series: seriesData, // Use the dynamically populated data
+                            xaxis: {
+                                offsetY: -50,
+                                categories: ["", 1, 2, 3, 4, 5, 6, 7, 8, 9, ""], // Adjust categories as necessary
+                                axisBorder: {
+                                    show: false
+                                },
+                                axisTicks: {
+                                    show: false
+                                },
+                                labels: {
+                                    show: true,
+                                    style: {
+                                        colors: [o] // Ensure label colors are properly applied
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                x: {
+                                    show: true // Show tooltip
+                                }
+                            }
+                        };
+
+                        // Create the chart
+                        var chart = new ApexCharts(document.querySelector("#order-summary-chart"), l);
+                        chart.render();
+                    });
+                </script>

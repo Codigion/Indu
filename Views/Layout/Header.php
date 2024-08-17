@@ -42,6 +42,7 @@
 </head>
 
 <body>
+
     <!-- Preloader Start -->
     <!-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -88,6 +89,7 @@
             </div>
         </div>
     </header>
+
     <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">

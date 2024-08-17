@@ -36,7 +36,7 @@
                                     </div>
 
                                     <div class="form-group mb-0">
-                                        <a id="signInBtn"  class="btn btn-primary btn-block"> Log In </a>
+                                        <a id="signInBtn"  class="btn btn-secondary btn-block"> Log In </a>
                                     </div>
                                 </form>
 

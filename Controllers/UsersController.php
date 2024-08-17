@@ -64,6 +64,7 @@ class UsersController
                 throw new Exception('Oops! Unable to load Settings.');
             }
 
+            $User = USER;
             $UploadPath = './' . $uploadResponse['dat'];
             $imagePath = escapeshellarg($UploadPath);
             $pythonPath = PYTHON_PATH; // Path to Python interpreter
@@ -79,7 +80,7 @@ class UsersController
             $errorFile = 'error.txt';
 
             // Command to run the Python script
-            $command = "sudo -u anjani0x41 $pythonPath $scriptPath -i $imagePath -y $YoloPath -c $ResnetPath -m $CowPath -t $Temperature -th $Threshold";
+            $command = "sudo -u $User $pythonPath $scriptPath -i $imagePath -y $YoloPath -c $ResnetPath -m $CowPath -t $Temperature -th $Threshold";
 
 
             // Define the descriptors for proc_open

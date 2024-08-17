@@ -24,4 +24,17 @@ model.py: error: argument -t/--temperature: expected one argument
 usage: model.py [-h] -i IMAGE -y YOLO_MODEL -c COW_ID_MODEL -m MAPPING_FILE
                 [-t TEMPERATURE] [-th THRESHOLD]
 model.py: error: argument -t/--temperature: expected one argument
-{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Cow ID prediction failed. Please check the model."}
+{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Cow ID prediction failed. Please check the model."}sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+
+
+
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+{"error": "not enough values to unpack (expected 4, got 3)"}{"error": "not enough values to unpack (expected 4, got 3)"}{"error": "not enough values to unpack (expected 4, got 3)"}{"error": "local variable 'max_confidence' referenced before assignment"}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}{"error": "Muzzle detection failed. Please check the image and model."}
