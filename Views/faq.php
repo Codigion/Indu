@@ -30,7 +30,7 @@
                                 <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p>
-                                            Cow Identifier is an innovative app developed by ICAR National Dairy Research Institute, Karnal. It uses artificial intelligence (AI) to identify individual cows based on their unique muzzle patterns. This simplifies and enhances livestock management by making it easier to track and record information about each animal. </p>
+                                            Cow Identifier is an innovative app developed by ICAR - National Dairy Research Institute, Karnal. It uses artificial intelligence (AI) to identify individual cows based on their unique muzzle patterns. This simplifies and enhances livestock management by making it easier to track and record information about each animal. </p>
                                     </div>
                                 </div>
                             </div>

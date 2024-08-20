@@ -74,6 +74,15 @@ class Admin extends Controller
         $this->view('admin/database', array());
         $this->layout('admin/Footer');
     }
+    public function databaseFailed()
+    {
+        self::checkSession();
+
+        $this->layout('admin/Header');
+        $this->layout('admin/Nav', array('nav' => 'database'));
+        $this->view('admin/failedDatabase', array());
+        $this->layout('admin/Footer');
+    }
     public function accountSettings()
     {
         self::checkSession();

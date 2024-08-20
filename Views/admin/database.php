@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-20">
                         <h6 class="card-title mb-0">Database</h6>
-                        <!-- <button type="button" class="btn btn-primary waves-effect waves-light float-right mb-3" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg">+ Add New</button> -->
+                        <a href="<?= Generic::baseURL(); ?>/failed-database" class="btn btn-secondary  float-right mb-3" >Failed Request</a>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -47,8 +47,10 @@
                                     <tr>
                                         <th>Timestamp</th>
                                         <th>Model Name / Version</th>
+                                        <th>Threshold / Temperature</th>
                                         <th>Cow Picture</th>
                                         <th>Quality</th>
+                                        <th>User Name</th>
                                         <th>Cow Muzzle</th>
                                         <th>Cow ID</th>
                                     </tr>
@@ -93,8 +95,10 @@
                         <tr>
                             <td>` + item.created_at + `</td>
                             <td>` + item.model_name + ` / ` + item.model_version +  `</td>
+                            <td>` + item.threshold + ` / ` + item.temperature +  `</td>
                             <td><a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/` + item.picture_orginal + `"/>Picture  </a> </td>
                             <td class="` + quantityColor + `">` + item.quality + `</td>
+                            <td>` + item.user_name + `</td>
                             <td> <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/muzzle/` + item.picture_muzzle + `"/> Picture  </a> </td>
                             <td>#` + item.cow_id + `</td>
                         </tr>

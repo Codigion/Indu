@@ -16,7 +16,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
             <a class="navbar-brand brand-logo" href=""><img src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" class="mr-2" alt="logo" /></a>
-            <h4 style="height: 20px;">ICAR</h4>
+            <h4 style="height: 20px;"></h4>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

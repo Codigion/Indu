@@ -14,7 +14,7 @@ class UsersModel
 
             $condition = '';
             if (Request::post('search')) {
-                $condition .= "WHERE (
+                $condition .= "AND (
                     u.name LIKE " . $this->db->escape('%' . Request::post('search') . '%') . "
                     OR
                     r.quality LIKE " . $this->db->escape('%' . Request::post('search') . '%') . "
@@ -34,6 +34,8 @@ class UsersModel
                     users u
                 LEFT JOIN 
                     requests r ON u.id = r.user_id
+                    WHERE u.status = '1'
+                    AND r.status = '1'
                     " . $condition . "
                 GROUP BY 
                     u.id
@@ -50,18 +52,14 @@ class UsersModel
     public function getUserDetails($userID)
     {
         try {
-            // r.thershold,
-            // r.temperature,
 
             return $this->db->result(
                 $this->db->query("
                   SELECT 
-                    m.version AS model_version,
+                    m.version AS model_ver,
                     m.name AS model_name,
                     r.created_at AS timestamp,
-                    r.cow_id,
-                    r.picture_orginal,
-                    r.picture_muzzle
+                    r.*
                 FROM 
                     users u
                 JOIN 
@@ -70,6 +68,8 @@ class UsersModel
                     models m ON r.model_version = m.id
                 WHERE 
                     u.id = " . $this->db->escape($userID) . "
+                    AND u.status = '1'
+                    AND r.status = '1'
                 ")
             );
         } catch (Exception $e) {
@@ -112,6 +112,27 @@ class UsersModel
                             " . $this->db->escape($pictureMuzzle) . ",
                             " . $this->db->escape(Request::post('cow_id')) . ",
                             " . $this->db->escape(Request::post('confidence_score')) . ",
+                            " . $this->db->escape(Request::post('model_version')) . ",
+                            '1'
+                        )
+                    "))
+                return false;
+            return true;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+    public function identifyCowFailed($pictureOrginal,$error,$command)
+    {
+        try {
+            if (!$this->db->query("
+                    INSERT INTO requests_failed
+                        (user_id, picture_orginal, error ,command , model_version,  status)
+                        VALUES(
+                            " . $this->db->escape(Cookie::get('cid')) . ",
+                            " . $this->db->escape($pictureOrginal) . ",
+                            " . $this->db->escape($error) . ",
+                            " . $this->db->escape($command) . ",
                             " . $this->db->escape(Request::post('model_version')) . ",
                             '1'
                         )

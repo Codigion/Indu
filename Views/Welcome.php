@@ -32,7 +32,7 @@
                 <h3>Cow Identifier</h3>
                 <br>
 
-                <small>ICAR National Dairy Research Institute, Karnal</small>
+                <small>ICAR - National Dairy Research Institute, Karnal</small>
                 <p class="mt-20">Our AI-powered application identifies individual cows using unique muzzle features, streamlining the process of capturing, processing, and matching images for accurate and efficient livestock management.</p>
                 <br>
                 <br>

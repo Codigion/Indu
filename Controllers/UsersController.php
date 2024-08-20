@@ -37,19 +37,24 @@ class UsersController
                 throw new Exception('Oops! Incorrect Model.');
             }
 
+            if (Validation::isEmpty(Request::post('session_id'))) {
+                throw new Exception('Oops! Incorrect Session Id.');
+            }
+
             $ModelsModel = System::loadModel('ModelsModel');
-            if ( $ModelsModel->checkIfModelActiveAndInUse(Request::post('model_version'))) {
+            if ($ModelsModel->checkIfModelActiveAndInUse(Request::post('model_version'))) {
                 throw new Exception('Oops! Incorrect Model Selected.');
             }
 
-        
-            $uploadResponse = File::uploadFile(Request::fileHandle('picture_orginal'), 'Assets/uploads/COW_Picture', array('png', 'jpg', 'jpeg'));
+            $uploadResponse = File::uploadFile(Request::fileHandle('picture_original'), 'Assets/uploads/COW_Picture', array('png', 'jpg', 'jpeg'));
             if ($uploadResponse['err']) {
                 throw new Exception('Cow Image : ' . $uploadResponse['msg']);
             } elseif (empty($uploadResponse['dat'])) {
                 throw new Exception('Oops! No Cow Picture');
             }
+            self::writeToFile(Request::post('session_id'), '1% Uploading the Image...');
 
+            self::writeToFile(Request::post('session_id'), '3% Loading Settings...');
             $ModelsArray =  $ModelsModel->getActiveModel();
             $SettingsArray = System::loadModel('SettingsModel')->getAllSetting();
 
@@ -64,6 +69,8 @@ class UsersController
                 throw new Exception('Oops! Unable to load Settings.');
             }
 
+            self::writeToFile(Request::post('session_id'), '4% Starting the program...');
+            $Session = escapeshellarg(Request::post('session_id'));
             $User = USER;
             $UploadPath = './' . $uploadResponse['dat'];
             $imagePath = escapeshellarg($UploadPath);
@@ -80,7 +87,7 @@ class UsersController
             $errorFile = 'error.txt';
 
             // Command to run the Python script
-            $command = "sudo -u $User $pythonPath $scriptPath -i $imagePath -y $YoloPath -c $ResnetPath -m $CowPath -t $Temperature -th $Threshold";
+            $command = "sudo -u $User $pythonPath $scriptPath -i $imagePath -y $YoloPath -c $ResnetPath -m $CowPath -t $Temperature -th $Threshold -session $Session";
 
 
             // Define the descriptors for proc_open
@@ -118,7 +125,11 @@ class UsersController
                 // Display any errors
                 if (!empty($error)) {
                     $error = json_decode($error, true);
-                    throw new Exception("Oops! Error: " . $error['error']);
+                    if (System::loadModel('UsersModel')->identifyCowFailed(basename($uploadResponse['dat']), $error['error'], $command)) {
+                        throw new Exception("Oops! Error: " . $error['error']);
+                    } else {
+                        throw new Exception('Oops! Something went wrong.');
+                    }
                 }
                 // Check if decoding was successful
                 if (json_last_error() === JSON_ERROR_NONE) {
@@ -129,9 +140,6 @@ class UsersController
                 } else {
                     throw new Exception("Error decoding JSON: " . json_last_error_msg());
                 }
-
-
-               
             } else {
                 throw new Exception("Oops! Unable to process the model.");
             }
@@ -165,12 +173,15 @@ class UsersController
             }
 
 
-            $cow_id = Request::post('cow_id');
             if (System::loadModel('UsersModel')->identifyCow(basename($uploadResponse['dat']), basename($destination))) {
                 Response::json(array(
                     'err' => false,
                     'msg' => 'Get Cow Details!',
-                    'COW_ID' => $cow_id,
+                    'COW_ID' => Request::post('cow_id'),
+                    'temperature' => Request::post('temperature'),
+                    'threshold' => Request::post('threshold'),
+                    'confidence_score' => Request::post('confidence_score'),
+                    'quality' => Request::post('quality'),
                     'MUZZLE' => basename($destination),
                     'return_value' => $return_value
                 ));
@@ -182,6 +193,20 @@ class UsersController
                 'err' => true,
                 'msg' => $e->getMessage()
             ));
+        }
+    }
+
+    private function writeToFile($filename, $content)
+    {
+        $filename =  $filename . '.abc';
+        $file = fopen($filename, 'w');
+
+        if ($file) {
+            fwrite($file, $content);
+            fclose($file);
+            chmod($filename, 0777);
+        } else {
+            echo "Error: Unable to open file.";
         }
     }
 

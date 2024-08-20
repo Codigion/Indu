@@ -9,10 +9,12 @@
        </section>
        <div class="container mt-90 mt-md-30">
            <div class="row">
+            <h4>Dr. Indu Devi, Scientist (LPM)</h4>
                <div class="col-xl-12 col-lg-12 m-auto">
                    <div class="mt-30">
-                       <h5>+91-000-000-0000</h5>
-                       <h5>contact@cowidentifier.com</h5>
+                       <h5>Phone: &nbsp;<a href="tel: <?= PROJECT_PHONE ?>"> <?= PROJECT_PHONE ?></a></h5>
+                       <h5>Email: &nbsp;&nbsp; <a href="tel: <?= PROJECT_EMAIL ?>"> <?= PROJECT_EMAIL ?></a></h5>
+                       <h5>Address: <?= PROJECT_ADDRESS ?></h5>
                    </div>
                    </section>
                </div>

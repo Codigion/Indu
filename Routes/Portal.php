@@ -11,7 +11,6 @@ class Portal extends Controller
     public function index()
     {
         self::logSession();
-
         self::checkSession();
 
         $this->layout('Header');
@@ -23,7 +22,9 @@ class Portal extends Controller
     {
         self::logSession();
 
-
+        if (!Cookie::cookieExists('cid')) {
+            header("Location: " . Generic::baseURL() . "/");
+        }
 
         $result = System::loadModel('ModelsModel')->getActiveModel();
         if (empty($result[0])) {

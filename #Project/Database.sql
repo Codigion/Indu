@@ -99,3 +99,21 @@ CREATE TABLE visitor(
 
 
 
+
+--  Request:
+CREATE TABLE requests_failed(
+    id int(11) auto_increment primary key,
+
+    user_id int(11),
+    
+    model_version varchar(50),
+
+    picture_orginal varchar(150),
+    error text,
+    command text,
+
+    
+	status enum('0','1'),
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  
+);

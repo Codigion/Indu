@@ -7,7 +7,6 @@
 
     .header {
         padding: 0px 0 !important;
-        float: left;
         width: 100%;
         position: absolute;
         top: 0;
@@ -19,10 +18,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>ICAR</title>
+    <title>ICAR-NDRI</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="" />
     <meta property="og:type" content="" />
     <meta property="og:url" content="" />
@@ -44,7 +43,7 @@
 <body>
 
     <!-- Preloader Start -->
-    <!-- <div id="preloader-active">
+    <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
@@ -52,40 +51,61 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+    <style>
+        .header {
+            padding: 0px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            /* Centers the content vertically */
+            justify-content: space-between;
+            /* Positions the children at the start and end */
+        }
+ 
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            /* Pushes the children to both ends */
+        }
+
+        .header-left,
+        .header-right {
+            flex: 1;
+            /* Gives an equal amount of space to each side */
+            display: flex;
+            align-items: center;
+            /* Vertically centers the images */
+        }
+
+        .header-right {
+            justify-content: flex-end;
+            padding-right: 10px;
+            /* Increase this value to push more to the right */
+            margin-top: 4px;
+            /* Aligns the right logo to the right */
+        }
+    </style>
     <header class="header sticky-bar">
         <div class="container">
-            <div class="main-header">
+            <div class="header-content">
                 <div class="header-left">
-                    <div class="header-logo">
-                        <a href="<?php echo Generic::baseURL(); ?>" style="width: 30%;" class="d-flex mt-10 mb-10"><img alt="" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" /></a>
-                    </div>
-                    <div class="header-nav">
-                        <nav class="nav-main-menu d-none d-xl-block">
-                            <ul class="main-menu">
-                                <li>
-                                    <a class="active" href="<?php echo Generic::baseURL(); ?>/">Home</a>
-                                </li>
-                                <li>
-                                    <a class="active" href="<?php echo Generic::baseURL(); ?>/about-us">About Us</a>
-                                </li>
-                                <li>
-                                    <a class="active" href="<?php echo Generic::baseURL(); ?>/contact-us">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a class="active" href="<?php echo Generic::baseURL(); ?>/faq">F.A.Q</a>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <div class="burger-icon burger-icon-white">
-                            <span class="burger-icon-top"></span>
-                            <span class="burger-icon-mid"></span>
-                            <span class="burger-icon-bottom"></span>
-                        </div>
-                    </div>
+                    <a href="<?php echo Generic::baseURL(); ?>">
+                        <img style="max-width:60px;" alt="Logo" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" />
+                    </a>
                 </div>
-
+                <div class="header-right">
+                    <a href="<?php echo Generic::baseURL(); ?>">
+                        <img style="max-width:60px;" alt="Logo" src="<?php echo Generic::baseURL(); ?>/Assets/logo1.png" />
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -122,7 +142,8 @@
                                 <li>
                                     <a href="<?php echo Generic::baseURL(); ?>/faq">F.A.Q</a>
                                 </li>
-                                <!-- <div class="mobile-account">
+                                <!-- 
+                                <div class="mobile-account">
                                     <h6 class="mb-10">Follow Us</h6>
 
                                     <div class="mobile-social-icon mb-50">
@@ -133,7 +154,8 @@
                                         <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-pinterest.svg" alt="" /></a>
                                         <a href="#"><img src="<?php echo Generic::baseURL(); ?>/Assets/imgs/theme/icons/icon-youtube.svg" alt="" /></a>
                                     </div>
-                                </div> -->
+                                </div> 
+                                -->
                             </ul>
                         </nav>
                         <!-- mobile menu end -->

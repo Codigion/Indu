@@ -1,0 +1,34 @@
+name: Flutter Build
+
+on:
+  push:
+    branches:
+      - master  # Change this to your desired branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.10.6  # Supported by latest flutter version 
+          
+      - name: Change Directory
+        run: cd app
+        
+      - name: Install dependencies
+        run: flutter pub get
+        
+      - name: Build Android APK
+        run: flutter build apk
+      
+      - name: Archive APK artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: android-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <!-- <a href=""><img alt="" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" /></a> -->
-                <div class="mt-20 mb-20"><strong>Cow Identifier</strong> - ICAR</div>
+                <div class="mt-20 mb-20"><strong>Cow Identifier</strong> - ICAR-NDRI</div>
             </div>
             <div class="col-md-2 col-xs-6">
                 <h6>Quick Links</h6>
@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                     Copyright ©<?php echo date('Y'); ?> 
                     <br/>
-                    <div style="font-size:10px">ICAR National Dairy Research Institute, Karnal</div>
+                    <div style="font-size:10px">ICAR - National Dairy Research Institute, Karnal</div>
                 </div>
                 <!-- <div class="col-md-6 text-md-end text-start">
                     <div class="footer-social">

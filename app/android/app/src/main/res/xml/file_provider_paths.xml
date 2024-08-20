@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This code below specifies that the FileProvider class provides access to the files in the /files directory. -->
+    <external-path name="files" path="." />
+
+    <!-- Grant access to the DCIM directory where camera images are stored -->
+    <external-path name="camera" path="DCIM/" />
+</paths>

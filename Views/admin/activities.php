@@ -28,8 +28,10 @@
                                                 <tr>
                                                     <th>Timestamp</th>
                                                     <th>Model Name / Version</th>
+                                                    <th>Threshold / Temperature</th>
                                                     <th>Cow Image</th>
                                                     <th>Cow Muzzle</th>
+                                                    <th>Quality</th>
                                                     <th>Cow ID</th>
                                                 </tr>
                                             </thead>
@@ -41,7 +43,11 @@
                                                         </td>
                                                         <td>
 
-                                                            <?= $activity->model_name; ?> /(<?= $activity->model_version; ?>)
+                                                            <?= $activity->model_name; ?> /(<?= $activity->model_ver; ?>)
+                                                        </td>
+                                                        <td>
+
+                                                            <?= $activity->threshold; ?> /(<?= $activity->temperature; ?>)
                                                         </td>
                                                         <td>
                                                             <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/<?= $activity->picture_orginal ?>" > Picture  </a>
@@ -50,6 +56,7 @@
                                                             <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/muzzle/<?= $activity->picture_muzzle ?>" >Picture  </a>
                                                         </td>
 
+                                                        <td><?= $activity->quality; ?></td>
                                                         <td>#<?= $activity->cow_id; ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>

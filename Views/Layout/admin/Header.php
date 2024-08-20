@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Required meta tags -->
 
-    <title>ICAR Admin</title>
+    <title>ICAR-NDRI Admin</title>
 
     <!-- Favicon -->
     <link rel="icon" href="<?php echo Generic::baseURL(); ?>/Assets/logo.png">

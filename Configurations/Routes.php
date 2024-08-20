@@ -26,6 +26,7 @@ $projectRoutes = array(
 
     
     'GetAllDatabase' => 'DatabaseController@getAllDatabase',
+    'GetAllDatabaseFailed' => 'DatabaseController@getAllDatabaseFailed',
 
     'GetAllUsers' => 'UsersController@getAllUsers',
 
@@ -50,6 +51,7 @@ $projectRoutes = array(
     'ai-models' => 'Admin@models',
     'account-settings' => 'Admin@accountSettings',
     'database' => 'Admin@database',
+    'failed-database' => 'Admin@databaseFailed',
     'sign-out' => 'Admin@signOut',
     'model-setting' => 'Admin@modelSettings',
     'contacted' => 'Admin@contacted',

@@ -97,6 +97,7 @@
                                             <th>Timestamp</th>
                                             <th>Model Name / Version</th>
                                             <th>No. Consumptions</th>
+                                            <th>No. Failed Consumptions</th>
                                             <th>Options</th>
                                         </tr>
                                     </thead>
@@ -121,6 +122,9 @@
                                                 </td>
                                                 <td>
                                                     <h4 class="h6 g-mb-2"><?= $model->no_of_consumptions; ?></h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="h6 g-mb-2"><?= $model->no_of_failed_consumptions; ?></h4>
                                                 </td>
                                                 <td>
                                                     <!-- <a class="btn btn-outline-warning btn-sm" href="<?php echo Generic::baseURL(); ?>/activities">

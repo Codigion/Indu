@@ -19,14 +19,15 @@ class ModelsModel
                         m.name AS model_name,
                         m.created_at AS timestamp,
                         m.version AS model_version,
-                        COUNT(r.id) AS no_of_consumptions,  
+                        (SELECT COUNT(*) FROM requests WHERE model_version = m.id AND status = '1') AS no_of_consumptions,
+                        (SELECT COUNT(*) FROM requests_failed WHERE model_version = m.id AND status = '1') AS no_of_failed_consumptions,
                         m.is_active AS active_status
                     FROM 
                         models AS m
-                    LEFT JOIN 
-                        requests r ON m.id = r.model_version
+                    WHERE 
+                        m.status = '1'
                     GROUP BY 
-                         m.id;
+                        m.id, m.name, m.created_at, m.version, m.is_active;
                 ")
             );
         } catch (Exception $e) {
