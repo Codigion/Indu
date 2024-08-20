@@ -93,3 +93,4 @@
 {"cow_id": "2834", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Poor"}
 {"cow_id": "2865", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
 {"cow_id": "2870", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}
+{"cow_id": "2900", "confidence_score": 1.0, "temperature": 0.5, "threshold": 0.5, "quality": "Excellent"}

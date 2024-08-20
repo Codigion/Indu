@@ -57,10 +57,9 @@ android {
     buildTypes {
         release {
             /* Devlopment Signing Configuration */
-            // signingConfig signingConfigs.debug
+            signingConfig signingConfigs.debug
 
             /* @Author: Shiva Chettri - Production Signing Configuration */
-            signingConfig null
             /* END @Author */
         }
     }
