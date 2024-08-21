@@ -42,6 +42,7 @@ dependencies:
   path: ^1.8.3
   permission_handler: ^10.4.5
   connectivity_plus: ^5.0.2
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +62,6 @@ dev_dependencies:
 flutter: 
   assets:
     - assets/logo.png
-    - assets/offline_page.html
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

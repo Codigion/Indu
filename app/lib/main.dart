@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,11 +33,12 @@ class _MyAppState extends State<MyApp> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
   bool _isOffline = false;
+  bool _cookiesInjected = false; // Flag to track cookie injection
 
   @override
   void initState() {
     super.initState();
-    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+    if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
 
     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
       setState(() {
@@ -59,10 +62,18 @@ class _MyAppState extends State<MyApp> {
               : WebView(
                   initialUrl: 'https://cow-identifier.codigion.com/',
                   javascriptMode: JavascriptMode.unrestricted,
-                  onWebViewCreated:
-                      (WebViewController webViewController) async {
+                  onWebViewCreated: (WebViewController webViewController) async {
                     _controller.complete(webViewController);
-                    _injectCookies(); // Inject cookies as soon as the WebView is created
+                    // Check cookies and inject if necessary
+                    if (!_cookiesInjected) {
+                      bool cookieExists = await _checkCookieExists('cid');
+                      if (!cookieExists) {
+                        await _injectCookies();
+                        setState(() {
+                          _cookiesInjected = true;
+                        });
+                      }
+                    }
                   },
                   onProgress: (int progress) {
                     // Handle progress
@@ -79,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                     return NavigationDecision.navigate;
                   },
                   onPageStarted: (String url) {
-                    _injectCookies(); // Inject cookies when the page starts loading
+                    // Optionally handle page started
                   },
                   onPageFinished: (String url) {
                     _retrieveCookies(); // Retrieve cookies when the page finishes loading
@@ -139,20 +150,41 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void _injectCookies() async {
+  Future<bool> _checkCookieExists(String cookieName) async {
     final controller = await _controller.future;
+    String script = "document.cookie";
+    String cookies = await controller.runJavascriptReturningResult(script);
+    // Check if the specific cookie is present
+    return cookies.contains('$cookieName=');
+  }
 
-    // Use your actual cookie names and values here
-    const cookieName = 'cid';
-    const cookieValue = 'cid';
-    const cookieCID = 'cid';
+  Future<void> _injectCookies() async {
+    final controller = await _controller.future;
+    try {
+      var url = Uri.parse(
+          'https://cow-identifier.codigion.com/IsApp'); // Adjust URL as needed
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body); // Parse the JSON response
+        debugPrint(data.toString());
 
-    String script = """
-      document.cookie = '$cookieName=$cookieValue; path=/';
-      document.cookie = '$cookieCID=value; path=/';
-    """;
+        // Assuming 'CookieName', 'CookieValue', and optionally 'expires' are fields in your JSON response
+        String cookieName = data['CookieName'];
+        String cookieValue = data['CookieValue'].toString();
+        String expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT;";
 
-    controller.runJavascript(script);
+        String script = """
+  document.cookie = '$cookieName=$cookieValue; $expires path=/;';
+  """;
+
+        await controller.runJavascript(script);
+        debugPrint('Cookies injected successfully');
+      } else {
+        debugPrint('Failed to load data: ${response.statusCode}');
+      }
+    } catch (e) {
+      debugPrint('Error fetching data: $e');
+    }
   }
 
   void _retrieveCookies() async {

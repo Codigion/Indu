@@ -9,7 +9,7 @@ class UsersController
                 throw new Exception('Oops! Incorrect Name.');
             }
 
-            if ($TryID = System::loadModel('UsersModel')->tryNow()) {
+            if ($TryID = System::loadModel('UsersModel')->tryNow(Cookie::get('cid'))) {
 
                 Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
                 Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
@@ -32,22 +32,22 @@ class UsersController
     public function isApp()
     {
         try {
-
-            if (Validation::isEmpty(Request::post('name'))) {
-                throw new Exception('Oops! Incorrect Name.');
-            }
-
-            if ($TryID = System::loadModel('UsersModel')->tryNow()) {
-
-                Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
-                Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
-
-                Response::json(array(
-                    'err' => false,
-                    'msg' => 'Registered!'
-                ));
+            
+            $UsersModel = System::loadModel('UsersModel');
+            $isApp = $UsersModel->isAppUserLogined(Cookie::get('cid'));
+            if (!$isApp) {
+                if ($TryID = $UsersModel->tryNowApp()) {
+                    Response::json(array(
+                        'err' => false,
+                        'msg' => 'Registered!',
+                        'CookieName' => 'cid',
+                        'CookieValue' => $TryID
+                    ));
+                } else {
+                    throw new Exception('Oops! Something went wrong.');
+                }
             } else {
-                throw new Exception('Oops! Something went wrong.');
+                header("Location: " . Generic::baseURL() . '/activity');
             }
         } catch (Exception $e) {
             Response::json(array(

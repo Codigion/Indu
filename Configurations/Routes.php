@@ -10,12 +10,12 @@
 // Define the project routes
 $projectRoutes = array(
 
-    /* Controller Routes */
-    'IsApp' => 'AuthenticationController@isApp',
+    /* Controller Routes */ 
     'UpdatePassword' => 'AuthenticationController@updatePassword',
     'Authenticate' => 'AuthenticationController@signIn',
     'SignOut' => 'AuthenticationController@signOut',
-
+    
+    'IsApp' => 'UsersController@isApp',
     'TryNow' => 'UsersController@tryNow',
     'IdentifyCow' => 'UsersController@identifyCow',
    

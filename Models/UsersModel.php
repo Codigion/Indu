@@ -79,9 +79,22 @@ class UsersModel
 
 
 
-    public function tryNow()
+    public function tryNow($userID = false)
     {
         try {
+
+            // For APP
+            if ($userID) {
+                if (!$this->db->query("
+                UPDATE users
+                  SET name =  " . $this->db->escape(Request::post('name')) . ",
+                  status = '1'
+                WHERE id = ". $this->db->escape($userID) . "
+                "))
+                    return false;
+                return true;
+            }
+
             if (!$this->db->query("
                     INSERT INTO users
                         (name, status)
@@ -97,6 +110,43 @@ class UsersModel
             throw $e;
         }
     }
+
+    public function tryNowApp()
+    {
+        try {
+            if (!$this->db->query("
+                    INSERT INTO users
+                        (status)
+                        VALUES(
+                            '1'
+                        )
+                    "))
+                return false;
+            $TryID = $this->db->insertID();
+            return $TryID;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+
+    public function isAppUserLogined($userID)
+    {
+        try {
+            if ((int)$this->db->result(
+                $this->db->query("
+                    SELECT COUNT(*) AS count
+                        FROM users
+                        WHERE id = " . $this->db->escape($userID) . "
+                ")
+            )[0]->count > 0)
+                return true;
+            return false;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
     public function identifyCow($pictureOrginal, $pictureMuzzle)
     {
         try {
@@ -122,7 +172,7 @@ class UsersModel
             throw $e;
         }
     }
-    public function identifyCowFailed($pictureOrginal,$error,$command)
+    public function identifyCowFailed($pictureOrginal, $error, $command)
     {
         try {
             if (!$this->db->query("
