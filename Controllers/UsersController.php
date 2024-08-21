@@ -12,8 +12,9 @@ class UsersController
             if ($TryID = System::loadModel('UsersModel')->tryNow(Cookie::get('cid'))) {
 
                 Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
-                Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
-
+                if (Cookie::cookieExists('cid')) {
+                    Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
+                }
                 Response::json(array(
                     'err' => false,
                     'msg' => 'Registered!'
@@ -32,7 +33,7 @@ class UsersController
     public function isApp()
     {
         try {
-            
+
             $UsersModel = System::loadModel('UsersModel');
             $isApp = $UsersModel->isAppUserLogined(Cookie::get('cid'));
             if (!$isApp) {

@@ -91,7 +91,7 @@ class Portal extends Controller
 
     public static function checkSession()
     {
-        if (Cookie::cookieExists('cid')) {
+        if (Cookie::cookieExists('name')) {
             header("Location: " . Generic::baseURL() . "/activity");
         }
     }
