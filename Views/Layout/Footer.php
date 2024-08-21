@@ -1,4 +1,3 @@
-
 </main>
 <!-- End Content -->
 
@@ -9,7 +8,17 @@
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <!-- <a href=""><img alt="" src="<?php echo Generic::baseURL(); ?>/Assets/logo.png" /></a> -->
-                <div class="mt-20 mb-20"><strong>Cow Identifier</strong> - ICAR-NDRI</div>
+                <div class="mt-20 mb-20">
+                    <strong>Cow Identifier</strong> - ICAR-NDRI
+                </div>
+                <h6>
+                    Dr. Indu Devi, Scientist (LPM),
+                </h6>
+                <p>Phone: <a href="tel:<?= PROJECT_PHONE ?>"><?= PROJECT_PHONE ?></a></p>
+                <p>Email: <a href="mailto:<?= PROJECT_PHONE ?>"><?= PROJECT_EMAIL ?></a></p>
+                <p>Address: ICAR-NDRI, Karnal.</p>
+                <br>
+                <br />
             </div>
             <div class="col-md-2 col-xs-6">
                 <h6>Quick Links</h6>
@@ -19,12 +28,20 @@
                     <li><a href="<?php echo Generic::baseURL(); ?>/contact-us">Contact</a></li>
                 </ul>
             </div>
+            <div class="col-md-2 col-xs-6">
+                <h6>Important Links</h6>
+                <ul class="menu-footer mt-40">
+                    <li><a href="<?php echo Generic::baseURL(); ?>/faq">F.A.Q.</a></li>
+                    <li><a href="<?php echo Generic::baseURL(); ?>/terms-and-condition">Terms of Use</a></li>
+                    <li><a href="<?php echo Generic::baseURL(); ?>/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom mt-10">
             <div class="row">
                 <div class="col-md-6">
-                    Copyright ©<?php echo date('Y'); ?> 
-                    <br/>
+                    Copyright ©<?php echo date('Y'); ?>
+                    <br />
                     <div style="font-size:10px">ICAR - National Dairy Research Institute, Karnal</div>
                 </div>
                 <!-- <div class="col-md-6 text-md-end text-start">

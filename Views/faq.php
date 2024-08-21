@@ -51,7 +51,7 @@
                                     </button>
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">The Cow Identifier app utilizes advanced AI algorithms for high accuracy in identification. The system is continually learning and improving its accuracy with each use.</div>
+                                    <div class="accordion-body">A: The app uses AI for cow identification. Its accuracy depends on the quality of the training data and may require retraining to improve over time.</div>
                                 </div>
                             </div>
                             <div class="accordion-item">

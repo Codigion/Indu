@@ -96,7 +96,7 @@
                                             <th>Status</th>
                                             <th>Timestamp</th>
                                             <th>Model Name / Version</th>
-                                            <th>No. Consumptions</th>
+                                            <th>No. Passed Consumptions</th>
                                             <th>No. Failed Consumptions</th>
                                             <th>Options</th>
                                         </tr>

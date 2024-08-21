@@ -28,7 +28,7 @@ def write_percentage(session_id, content):
     :param file_path: Path to the file to be overwritten.
     :param content: Content to write into the file.
     """
-    with open(session_id + ".abc", "w") as file:
+    with open(session_id, "w") as file:
         file.write(content)
 
 
@@ -139,7 +139,7 @@ def predict_cow_id(image, model):
         return (
             None,
             None,
-            json.dumps({"error": "Cow ID prediction failed. Please check the model."}),
+            json.dumps({"error": "Cow ID prediction failed. Please check the image and model."}),
         )
 
 
@@ -180,10 +180,12 @@ def determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score):
             return "Good", None
         elif bbox_size > 10000 and sharpness > 50 and confidence_score > 0.4:
             return None, json.dumps(
-                {"error": "Muzzle detection failed. Please check the image and model."}
+                {"error": "Cow ID prediction failed. Please check the image and model."}
             )
         else:
-            return "Poor", None
+            return "Poor", json.dumps(
+                {"error": "Cow ID prediction failed. Please check the image and model."}
+            )
     except Exception as e:
         logging.error(f"Error determining image quality: {e}")
         return "Unknown"
@@ -191,7 +193,7 @@ def determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score):
 
 def main(args):
     try:
-        write_percentage(args.session, "5% Model ...")
+        write_percentage(args.session, "Compelted 5%. Loading Models ...")
         yolo_model, cow_ID_model, error = load_models(
             args.yolo_model, args.cow_id_model
         )
@@ -199,13 +201,13 @@ def main(args):
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "10% Database...")
+        write_percentage(args.session, "Completed 10%. Loading Cow's Mapping Database...")
         int_to_ID_161, error = load_cow_id_mappings(args.mapping_file)
         if error:
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "25% Image...")
+        write_percentage(args.session, "Completed 25%. Uploading Image to Model...")
         cow_image = cv2.imread(args.image)
         if cow_image is None:
             sys.stderr.write(
@@ -213,7 +215,7 @@ def main(args):
             )
             return
 
-        write_percentage(args.session, "50% Detecting Muzzle...")
+        write_percentage(args.session, "Completed 50%. Detecting Muzzle...")
         muzzle_image, bbox_size, confidence_score, error = detect_muzzle(
             yolo_model, cow_image
         )
@@ -221,38 +223,38 @@ def main(args):
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "55% Croping the images...")
+        write_percentage(args.session, "Completed 55%. Cropping the Muzzle area...")
         cropped_muzzle_image, error = crop_image_center(muzzle_image)
         if error:
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "70% Convert the image to Color ...")
+        write_percentage(args.session, "Completed 70%. Converting the GrayScale image to Color ...")
         color_muzzle_image, error = convert_grayscale_to_color(cropped_muzzle_image)
         if error:
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "74% Convert the image to Color ...")
+        write_percentage(args.session, "Completed 74%. Preparing Image for Prediction ...")
         prepared_image, error = prepare_image_for_prediction(color_muzzle_image)
         if error:
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "76% Emsure target Size ...")
+        write_percentage(args.session, "Completed 76%. Cross-checking Target Image Size ...")
         image_front, error = ensure_target_size(prepared_image)
         if error:
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, "90% Getting Cow ID ...")
+        write_percentage(args.session, "Completed 90%. Predicting Cow ID ...")
         predicted_label, confidence, error = predict_cow_id(image_front, cow_ID_model)
         if error:
             sys.stderr.write(error)
             return
 
         # Determine quality based on muzzle detection
-        write_percentage(args.session, "95% Quality of Image ...")
+        write_percentage(args.session, "Completed 95%. Determining Model's Quality from Muzzle ...")
         quality, error = determine_quality_from_muzzle(
             muzzle_image, bbox_size, confidence_score
         )
@@ -260,10 +262,10 @@ def main(args):
             sys.stderr.write(error)
             return
 
-        write_percentage(args.session, f"95% Quality of Image {quality} ...")
+        write_percentage(args.session, f"Completed 95%. Modal's Quality of Muzzle: {quality} ...")
         # Now, use the color image for further processing if needed
         # For demonstration, let's save the color image to a file
-        write_percentage(args.session, "99% Writing the image in disk ...")
+        write_percentage(args.session, "Completed 99%. Saving Image to Disk ...")
         cv2.imwrite("color_file.png", color_muzzle_image)
 
         data = {
@@ -273,7 +275,7 @@ def main(args):
             "threshold": args.threshold,
             "quality": quality,
         }
-        write_percentage(args.session, "100% Completed ...")
+        write_percentage(args.session, "Completed 100%. Completed Cow Identification, processing results ...")
         print(json.dumps(data))
     except Exception as e:
         error_json = json.dumps({"error": str(e)})
@@ -282,7 +284,7 @@ def main(args):
     finally:
         # Ensure the session file is deleted
         if os.path.exists(args.session):
-            os.remove(args.session + ".abc")
+            os.remove(args.session)
 
 
 if __name__ == "__main__":

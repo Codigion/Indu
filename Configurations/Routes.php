@@ -11,6 +11,8 @@
 $projectRoutes = array(
 
     /* Controller Routes */
+    'IsApp' => 'AuthenticationController@isApp',
+    'UpdatePassword' => 'AuthenticationController@updatePassword',
     'Authenticate' => 'AuthenticationController@signIn',
     'SignOut' => 'AuthenticationController@signOut',
 

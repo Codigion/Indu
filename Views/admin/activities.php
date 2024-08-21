@@ -28,7 +28,7 @@
                                                 <tr>
                                                     <th>Timestamp</th>
                                                     <th>Model Name / Version</th>
-                                                    <th>Threshold / Temperature</th>
+                                                    <th>Threshold / Temperature / Confidence Score</th>
                                                     <th>Cow Image</th>
                                                     <th>Cow Muzzle</th>
                                                     <th>Quality</th>
@@ -46,14 +46,23 @@
                                                             <?= $activity->model_name; ?> /(<?= $activity->model_ver; ?>)
                                                         </td>
                                                         <td>
-
-                                                            <?= $activity->threshold; ?> /(<?= $activity->temperature; ?>)
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <strong>Threshold:</strong><br> <?= $activity->threshold; ?>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <strong>Temperature:</strong><br> <?= $activity->temperature; ?>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <strong>Confidence Score:</strong><br><?= $activity->confidence_score; ?>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                         <td>
-                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/<?= $activity->picture_orginal ?>" > Picture  </a>
+                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/<?= $activity->picture_orginal ?>"> Picture </a>
                                                         </td>
                                                         <td>
-                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/muzzle/<?= $activity->picture_muzzle ?>" >Picture  </a>
+                                                            <a target="_blank" href="<?= Generic::baseURL(); ?>/Assets/uploads/COW_Picture/muzzle/<?= $activity->picture_muzzle ?>">Picture </a>
                                                         </td>
 
                                                         <td><?= $activity->quality; ?></td>

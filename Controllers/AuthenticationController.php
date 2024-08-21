@@ -2,10 +2,10 @@
 class AuthenticationController
 {
 
-      public function signIn()
+    public function signIn()
     {
         try {
-            
+
             if (Validation::isEmpty(Request::post('email'))) {
                 throw new Exception('Oops! Incorrect Username.');
             }
@@ -87,5 +87,4 @@ class AuthenticationController
             ));
         }
     }
-
 }

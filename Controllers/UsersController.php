@@ -29,6 +29,35 @@ class UsersController
         }
     }
 
+    public function isApp()
+    {
+        try {
+
+            if (Validation::isEmpty(Request::post('name'))) {
+                throw new Exception('Oops! Incorrect Name.');
+            }
+
+            if ($TryID = System::loadModel('UsersModel')->tryNow()) {
+
+                Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
+                Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
+
+                Response::json(array(
+                    'err' => false,
+                    'msg' => 'Registered!'
+                ));
+            } else {
+                throw new Exception('Oops! Something went wrong.');
+            }
+        } catch (Exception $e) {
+            Response::json(array(
+                'err' => true,
+                'msg' => $e->getMessage()
+            ));
+        }
+    }
+
+
     public function identifyCow()
     {
         try {
@@ -41,6 +70,8 @@ class UsersController
                 throw new Exception('Oops! Incorrect Session Id.');
             }
 
+            $Session = Request::post('session_id');
+
             $ModelsModel = System::loadModel('ModelsModel');
             if ($ModelsModel->checkIfModelActiveAndInUse(Request::post('model_version'))) {
                 throw new Exception('Oops! Incorrect Model Selected.');
@@ -52,9 +83,8 @@ class UsersController
             } elseif (empty($uploadResponse['dat'])) {
                 throw new Exception('Oops! No Cow Picture');
             }
-            self::writeToFile(Request::post('session_id'), '1% Uploading the Image...');
 
-            self::writeToFile(Request::post('session_id'), '3% Loading Settings...');
+            self::writeToFile($Session, 'Completed 3%. Initializing Cow Identification configurations...');
             $ModelsArray =  $ModelsModel->getActiveModel();
             $SettingsArray = System::loadModel('SettingsModel')->getAllSetting();
 
@@ -69,8 +99,8 @@ class UsersController
                 throw new Exception('Oops! Unable to load Settings.');
             }
 
-            self::writeToFile(Request::post('session_id'), '4% Starting the program...');
-            $Session = escapeshellarg(Request::post('session_id'));
+            self::writeToFile($Session, 'Completed 4%. Initialization completed...');
+            $Session = escapeshellarg($Session);
             $User = USER;
             $UploadPath = './' . $uploadResponse['dat'];
             $imagePath = escapeshellarg($UploadPath);
@@ -169,20 +199,21 @@ class UsersController
             $UploadMuzzle = MUZZLE_IMG;
 
             if (!copy($UploadMuzzle, $destination)) {
-                throw new Exception('Oops! Can\'t Move the Muzzle Image.');
+                throw new Exception('Oops! Can\'t move the Muzzle Image.');
             }
 
 
             if (System::loadModel('UsersModel')->identifyCow(basename($uploadResponse['dat']), basename($destination))) {
                 Response::json(array(
                     'err' => false,
-                    'msg' => 'Get Cow Details!',
+                    'msg' => 'Cow Identification completed successfully!',
                     'COW_ID' => Request::post('cow_id'),
                     'temperature' => Request::post('temperature'),
                     'threshold' => Request::post('threshold'),
                     'confidence_score' => Request::post('confidence_score'),
                     'quality' => Request::post('quality'),
                     'MUZZLE' => basename($destination),
+                    'ORGINAL' => basename($uploadResponse['dat']),
                     'return_value' => $return_value
                 ));
             } else {
@@ -198,7 +229,6 @@ class UsersController
 
     private function writeToFile($filename, $content)
     {
-        $filename =  $filename . '.abc';
         $file = fopen($filename, 'w');
 
         if ($file) {

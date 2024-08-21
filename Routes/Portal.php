@@ -58,8 +58,8 @@ class Portal extends Controller
     {
         self::logSession();
 
-        $this->layout('privacy');
-        $this->view('contact', array());
+        $this->layout('Header');
+        $this->view('privacy', array());
         $this->layout('Footer');
     }
 
