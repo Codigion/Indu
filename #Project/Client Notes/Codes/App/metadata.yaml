@@ -1,0 +1,13 @@
+description: Ultralytics muzzle_detect_YOLO_wts model trained on custom_data.yaml
+author: Ultralytics
+license: AGPL-3.0 https://ultralytics.com/license
+date: '2023-10-08T03:14:02.161973'
+version: 8.0.195
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Muzzle
