@@ -1,0 +1,350 @@
+image_path,cow_id,confidence_score,temperature,threshold,quality,error
+3026_1.jpg,3026,1,0.5,0.5,Excellent,
+2261_1.jpg,2856,0.75,0.5,0.5,Excellent,
+2641_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2528_1.jpg,2528,1,0.5,0.5,Very Good,
+2750_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2745_1.jpg,2914,0.36,0.5,0.5,Excellent,
+2922_1.jpg,2922,1,0.5,0.5,Excellent,
+2599_1.jpg,2599,1,0.5,0.5,Good,
+2789_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2893_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2897_1.jpg,2897,1,0.5,0.5,Excellent,
+2468_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2626_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+3012_1.jpg,3012,1,0.5,0.5,Excellent,
+2625_1.jpg,2625,1,0.5,0.5,Excellent,
+2487_1.jpg,2487,1,0.5,0.5,Good,
+2886_1.jpg,2886,1,0.5,0.5,Excellent,
+2298_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2813_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2374_1.jpg,2374,1,0.5,0.5,Excellent,
+2784_1.jpg,2784,1,0.5,0.5,Good,
+2676_1.jpg,2676,1,0.5,0.5,Excellent,
+2671_1.jpg,2671,1,0.5,0.5,Excellent,
+594_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2786_1.jpg,2786,1,0.5,0.5,Excellent,
+2_1.jpg,2,1,0.5,0.5,Good,
+2227_1.jpg,2227,1,0.5,0.5,Excellent,
+2956_1.jpg,2956,1,0.5,0.5,Very Good,
+2950_1.jpg,2950,1,0.5,0.5,Excellent,
+3023_1.jpg,2911,0.65,0.5,0.5,Excellent,
+2872_1.jpg,3035,0.96,0.5,0.5,Good,
+3089_1.jpg,3089,1,0.5,0.5,Very Good,
+3032_1.jpg,3032,1,0.5,0.5,Excellent,
+2596_1.jpg,2596,1,0.5,0.5,Excellent,
+2608_1.jpg,2856,0.99,0.5,0.5,Very Good,
+2947_1.jpg,2947,1,0.5,0.5,Excellent,
+24_1.jpg,24,0.99,0.5,0.5,Excellent,
+2390_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2695_1.jpg,2695,1,0.5,0.5,Excellent,
+2525_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2909_1.jpg,2903,1,0.5,0.5,Good,
+2884_1.jpg,2884,1,0.5,0.5,Excellent,
+2773_1.jpg,2773,0.95,0.5,0.5,Very Good,
+2985_1.jpg,2985,1,0.5,0.5,Excellent,
+2921_1.jpg,2921,1,0.5,0.5,Excellent,
+2756_1.jpg,2756,1,0.5,0.5,Excellent,
+2775_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+6_1.jpg,2767,0.89,0.5,0.5,Excellent,
+16_1.jpg,16,1,0.5,0.5,Good,
+2764_1.jpg,2764,1,0.5,0.5,Good,
+17_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2840_1.jpg,2840,1,0.5,0.5,Good,
+2681_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2514_1.jpg,2514,1,0.5,0.5,Excellent,
+2743_1.jpg,2743,1,0.5,0.5,Excellent,
+2647_1.jpg,2647,1,0.5,0.5,Good,
+2903_1.jpg,2903,1,0.5,0.5,Excellent,
+2792_1.jpg,2695,0.7,0.5,0.5,Very Good,
+3011_1.jpg,3011,1,0.5,0.5,Excellent,
+2734_1.jpg,2734,1,0.5,0.5,Excellent,
+2480_1.jpg,2480,0.99,0.5,0.5,Excellent,
+2691_1.jpg,2721,0.85,0.5,0.5,Excellent,
+2777_1.jpg,2892,0.71,0.5,0.5,Excellent,
+2790_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2644_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2970_1.jpg,2970,1,0.5,0.5,Excellent,
+2752_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2737_1.jpg,2726,0.94,0.5,0.5,Very Good,
+2541_1.jpg,21,0.37,0.5,0.5,Excellent,
+2864_1.jpg,2864,1,0.5,0.5,Excellent,
+2594_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2995_1.jpg,2995,0.65,0.5,0.5,Excellent,
+2682_1.jpg,2682,0.36,0.5,0.5,Excellent,
+2465_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2973_1.jpg,2564,0.93,0.5,0.5,Excellent,
+2680_1.jpg,2795,0.99,0.5,0.5,Excellent,
+2796_1.jpg,2796,1,0.5,0.5,Excellent,
+2984_1.jpg,2984,1,0.5,0.5,Very Good,
+2832_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2536_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2885_1.jpg,2885,1,0.5,0.5,Excellent,
+2861_1.jpg,2861,1,0.5,0.5,Very Good,
+797_1.jpg,2749,0.37,0.5,0.5,Good,
+2853_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2991_1.jpg,2991,1,0.5,0.5,Good,
+2857_1.jpg,2857,1,0.5,0.5,Excellent,
+2837_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+14_1.jpg,14,1,0.5,0.5,Good,
+2586_1.jpg,2586,1,0.5,0.5,Good,
+2907_1.jpg,2907,1,0.5,0.5,Very Good,
+2800_1.jpg,2800,1,0.5,0.5,Excellent,
+2607_1.jpg,2607,1,0.5,0.5,Good,
+2679_1.jpg,2679,1,0.5,0.5,Excellent,
+2554_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2895_1.jpg,2895,1,0.5,0.5,Excellent,
+2900_1.jpg,2900,1,0.5,0.5,Excellent,
+3019_1.jpg,3019,1,0.5,0.5,Excellent,
+2983_1.jpg,2983,1,0.5,0.5,Excellent,
+2891_1.jpg,2891,1,0.5,0.5,Excellent,
+2890_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2736_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+22_1.jpg,22,1,0.5,0.5,Excellent,
+2854_1.jpg,2854,1,0.5,0.5,Excellent,
+2842_1.jpg,2842,1,0.5,0.5,Excellent,
+2870_1.jpg,2870,1,0.5,0.5,Excellent,
+3013_1.jpg,3013,1,0.5,0.5,Excellent,
+12_1.jpg,12,1,0.5,0.5,Excellent,
+2817_1.jpg,2817,1,0.5,0.5,Good,
+2911_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2843_1.jpg,2843,1,0.5,0.5,Good,
+2774_1.jpg,2774,1,0.5,0.5,Good,
+2762_1.jpg,2762,1,0.5,0.5,Excellent,
+2763_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2906_1.jpg,2906,1,0.5,0.5,Excellent,
+2049_1.jpg,2049,1,0.5,0.5,Excellent,
+2251_1.jpg,2251,1,0.5,0.5,Excellent,
+2620_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2892_1.jpg,2892,1,0.5,0.5,Very Good,
+2767_1.jpg,2767,1,0.5,0.5,Excellent,
+2835_1.jpg,2835,1,0.5,0.5,Good,
+612_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2961_1.jpg,2961,1,0.5,0.5,Excellent,
+2797_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2926_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2690_1.jpg,2690,1,0.5,0.5,Excellent,
+2614_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2943_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2445_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2615_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2637_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2415_1.jpg,2415,1,0.5,0.5,Excellent,
+2424_1.jpg,2725,0.66,0.5,0.5,Excellent,
+2582_1.jpg,2582,1,0.5,0.5,Excellent,
+2918_1.jpg,2995,0.55,0.5,0.5,Excellent,
+2848_1.jpg,2848,0.93,0.5,0.5,Very Good,
+2761_1.jpg,2761,1,0.5,0.5,Good,
+2873_1.jpg,2873,1,0.5,0.5,Excellent,
+2537_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2795_1.jpg,2795,1,0.5,0.5,Very Good,
+2912_1.jpg,2912,1,0.5,0.5,Very Good,
+1966_1.jpg,1966,1,0.5,0.5,Good,
+2811_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+3031_1.jpg,3031,1,0.5,0.5,Excellent,
+2860_1.jpg,2860,1,0.5,0.5,Excellent,
+27_1.jpg,2856,1,0.5,0.5,Excellent,
+2944_1.jpg,2944,1,0.5,0.5,Excellent,
+2451_1.jpg,2451,1,0.5,0.5,Excellent,
+870_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+7_1.jpg,2564,1,0.5,0.5,Good,
+2603_1.jpg,2603,1,0.5,0.5,Excellent,
+2718_1.jpg,2939,0.21,0.5,0.5,Excellent,
+2699_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2953_1.jpg,2953,1,0.5,0.5,Excellent,
+2612_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2869_1.jpg,2869,1,0.5,0.5,Excellent,
+2877_1.jpg,2877,1,0.5,0.5,Good,
+2847_2.jpg,2554,0.89,0.5,0.5,Excellent,
+2816_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2924_1.jpg,2924,1,0.5,0.5,Excellent,
+844_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2894_1.jpg,2917,0.62,0.5,0.5,Excellent,
+2899_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2393_1.jpg,2732,0.95,0.5,0.5,Excellent,
+2683_1.jpg,2683,1,0.5,0.5,Good,
+2722_1.jpg,2722,1,0.5,0.5,Very Good,
+2518_1.jpg,2518,1,0.5,0.5,Good,
+2560_1.jpg,2926,0.9,0.5,0.5,Very Good,
+3004_1.jpg,3004,1,0.5,0.5,Excellent,
+2927_1.jpg,2927,1,0.5,0.5,Excellent,
+3014_1.jpg,3014,1,0.5,0.5,Good,
+3020_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2828_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2725_1.jpg,2725,1,0.5,0.5,Excellent,
+2852_1.jpg,2852,1,0.5,0.5,Excellent,
+2746_1.jpg,2679,0.64,0.5,0.5,Excellent,
+2315_1.jpg,3032,0.61,0.5,0.5,Excellent,
+2564_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2919_1.jpg,2919,1,0.5,0.5,Excellent,
+2730_1.jpg,2720,0.86,0.5,0.5,Excellent,
+2838_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2766_1.jpg,2766,1,0.5,0.5,Excellent,
+color_file.png,,,,,,{"error": "Muzzle detection failed. Please check the image and model."}
+2749_1.jpg,2905,0.27,0.5,0.5,Excellent,
+2768_1.jpg,2768,1,0.5,0.5,Excellent,
+2783_1.jpg,2783,0.97,0.5,0.5,Excellent,
+2755_1.jpg,2767,0.92,0.5,0.5,Very Good,
+2820_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2574_1.jpg,2574,1,0.5,0.5,Excellent,
+2583_1.jpg,2583,1,0.5,0.5,Excellent,
+2657_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2588_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+23_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2670_1.jpg,2670,1,0.5,0.5,Very Good,
+2818_1.jpg,2818,1,0.5,0.5,Excellent,
+2760_1.jpg,2917,0.18,0.5,0.5,Excellent,
+2364_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2981_1.jpg,2981,1,0.5,0.5,Excellent,
+2908_1.jpg,2908,1,0.5,0.5,Excellent,
+2913_1.jpg,2913,0.64,0.5,0.5,Good,
+3006_1.jpg,3006,1,0.5,0.5,Good,
+2962_1.jpg,2962,1,0.5,0.5,Excellent,
+2495_1.jpg,2495,1,0.5,0.5,Good,
+2833_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2802_1.jpg,2802,1,0.5,0.5,Excellent,
+2694_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2804_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2617_1.jpg,2617,1,0.5,0.5,Good,
+2661_1.jpg,2661,1,0.5,0.5,Excellent,
+607_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2867_1.jpg,2867,1,0.5,0.5,Excellent,
+2613_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2726_1.jpg,2726,1,0.5,0.5,Very Good,
+2830_1.jpg,2830,1,0.5,0.5,Good,
+3035_1.jpg,3035,1,0.5,0.5,Excellent,
+2914_1.jpg,2914,1,0.5,0.5,Excellent,
+2798_1.jpg,2600,0.57,0.5,0.5,Excellent,
+2483_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2693_1.jpg,2693,1,0.5,0.5,Excellent,
+2723_1.jpg,2723,1,0.5,0.5,Excellent,
+2834_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2875_1.jpg,2875,1,0.5,0.5,Excellent,
+2393_4.jpg,2393,1,0.5,0.5,Very Good,
+2868_1.jpg,2868,1,0.5,0.5,Very Good,
+2728_1.jpg,2728,1,0.5,0.5,Excellent,
+2806_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2829_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2692_1.jpg,2692,1,0.5,0.5,Very Good,
+2859_1.jpg,2859,1,0.5,0.5,Excellent,
+2810_1.jpg,2810,1,0.5,0.5,Excellent,
+606_1.jpg,3032,0.79,0.5,0.5,Very Good,
+2747_1.jpg,2459,1,0.5,0.5,Excellent,
+2831_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2993_1.jpg,2993,1,0.5,0.5,Good,
+2879_1.jpg,2863,0.38,0.5,0.5,Good,
+2782_1.jpg,2782,1,0.5,0.5,Excellent,
+2845_1.jpg,2845,1,0.5,0.5,Excellent,
+2631_1.jpg,2631,1,0.5,0.5,Excellent,
+3017_1.jpg,3017,1,0.5,0.5,Excellent,
+2904_1.jpg,14,0.39,0.5,0.5,Excellent,
+2975_1.jpg,2975,1,0.5,0.5,Excellent,
+2815_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2839_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2979_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+3025_1.jpg,,,,,,{"error": "Muzzle detection failed. Please check the image and model."}
+2721_1.jpg,2514,0.37,0.5,0.5,Good,
+242_1.jpg,242,1,0.5,0.5,Excellent,
+2713_1.jpg,2713,1,0.5,0.5,Very Good,
+2866_1.jpg,2866,1,0.5,0.5,Very Good,
+2780_1.jpg,2780,1,0.5,0.5,Excellent,
+3021_1.jpg,3021,1,0.5,0.5,Excellent,
+2876_1.jpg,2876,1,0.5,0.5,Excellent,
+2754_1.jpg,3004,0.21,0.5,0.5,Excellent,
+2986_1.jpg,2986,1,0.5,0.5,Excellent,
+2673_1.jpg,2673,1,0.5,0.5,Excellent,
+2901_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2939_1.jpg,2939,1,0.5,0.5,Excellent,
+2781_1.jpg,2781,1,0.5,0.5,Excellent,
+2732_.jpg,2732,1,0.5,0.5,Good,
+2621_1.jpg,2621,0.99,0.5,0.5,Excellent,
+2476_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2794_1.jpg,2794,1,0.5,0.5,Excellent,
+2917_1.jpg,2917,1,0.5,0.5,Very Good,
+2905_1.jpg,2905,1,0.5,0.5,Good,
+2663_1.jpg,2663,0.98,0.5,0.5,Excellent,
+2694_2.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2972_1.jpg,2972,1,0.5,0.5,Excellent,
+2896_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2785_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2809_1.jpg,2939,0.28,0.5,0.5,Excellent,
+2629_1.jpg,2629,0.81,0.5,0.5,Excellent,
+2665_1.jpg,2665,1,0.5,0.5,Excellent,
+2779_1.jpg,2779,1,0.5,0.5,Very Good,
+2653_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2998_1.jpg,2998,1,0.5,0.5,Good,
+2836_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+3015_1.jpg,3015,1,0.5,0.5,Excellent,
+25_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2335_1.jpg,2335,1,0.5,0.5,Excellent,
+2450_1.jpg,2415,0.6,0.5,0.5,Excellent,
+2980_1.jpg,2980,1,0.5,0.5,Excellent,
+2822_.jpg,2822,1,0.5,0.5,Very Good,
+2686_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2733_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2801_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+9_1.jpg,2991,0.63,0.5,0.5,Good,
+2442_1.jpg,2442,1,0.5,0.5,Very Good,
+2349_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2849_1.jpg,2849,1,0.5,0.5,Excellent,
+3027_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2880_1.jpg,2726,0.85,0.5,0.5,Excellent,
+3008_1.jpg,2895,0.9,0.5,0.5,Excellent,
+2659_1.jpg,2659,1,0.5,0.5,Excellent,
+3022_1.jpg,3022,1,0.5,0.5,Excellent,
+2689_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2778_1.jpg,2778,1,0.5,0.5,Excellent,
+2787_1.jpg,2787,1,0.5,0.5,Very Good,
+2771_1.jpg,2601,0.58,0.5,0.5,Very Good,
+2530_1.jpg,2530,1,0.5,0.5,Excellent,
+2566_1.jpg,2670,0.67,0.5,0.5,Good,
+2577_1.jpg,2577,1,0.5,0.5,Good,
+2601_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2535_1.jpg,2535,1,0.5,0.5,Very Good,
+2856_1.jpg,2856,1,0.5,0.5,Very Good,
+2888_1.jpg,2888,1,0.5,0.5,Excellent,
+2623_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2855_1.jpg,2855,0.96,0.5,0.5,Excellent,
+2799_1.jpg,2799,1,0.5,0.5,Excellent,
+2729_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2946_1.jpg,2946,1,0.5,0.5,Very Good,
+266_1.jpg,2518,0.63,0.5,0.5,Very Good,
+2910_1.jpg,2910,1,0.5,0.5,Good,
+2701_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2841_1.jpg,2841,1,0.5,0.5,Excellent,
+3005_1.jpg,3005,1,0.5,0.5,Excellent,
+2123_1.jpg,2123,1,0.5,0.5,Good,
+21_1.jpg,21,1,0.5,0.5,Excellent,
+2672_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2459_1.jpg,2459,1,0.5,0.5,Excellent,
+3009_1.jpg,3009,1,0.5,0.5,Good,
+2677_1.jpg,16,0.83,0.5,0.5,Very Good,
+2640_1.jpg,2640,1,0.5,0.5,Very Good,
+2417_1.jpg,2417,1,0.5,0.5,Very Good,
+15_1.jpg,15,1,0.5,0.5,Excellent,
+2684_1.jpg,2684,1,0.5,0.5,Excellent,
+2720_1.jpg,2720,1,0.5,0.5,Excellent,
+3018_1.jpg,3018,1,0.5,0.5,Very Good,
+3037_1.jpg,3037,1,0.5,0.5,Excellent,
+26_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2928_1.jpg,2928,1,0.5,0.5,Very Good,
+2697_1.jpg,2697,1,0.5,0.5,Excellent,
+10_1.jpg,10,1,0.5,0.5,Excellent,
+2265_1.jpg,2265,1,0.5,0.5,Good,
+2865_1.jpg,2865,1,0.5,0.5,Excellent,
+2846_1.jpg,2846,1,0.5,0.5,Excellent,
+2751_1.jpg,2751,1,0.5,0.5,Excellent,
+2968_1.jpg,2968,1,0.5,0.5,Excellent,
+2592_1.jpg,2592,1,0.5,0.5,Excellent,
+2850_1.jpg,2850,1,0.5,0.5,Excellent,
+2772_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2920_1.jpg,2920,1,0.5,0.5,Excellent,
+2600_1.jpg,2600,1,0.5,0.5,Excellent,
+2740_1.jpg,2722,0.3,0.5,0.5,Good,
+2587_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2915_1.jpg,2915,1,0.5,0.5,Good,
+2863_1.jpg,2863,1,0.5,0.5,Good,
+2791_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+2513_1.jpg,2513,1,0.5,0.5,Very Good,
+2942_1.jpg,,,,,,{"error": "Cow ID prediction failed. Please check the image and model."}
+3036_1.jpg,3036,0.77,0.5,0.5,Excellent,

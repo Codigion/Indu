@@ -122,3 +122,40 @@ server {
         return 404;
     }
 
+
+https://colab.research.google.com/drive/1PRD5metCHoG1-X4MlpQuKHoXbhei-sMS?usp=sharing
+
+
+
+Processing file 148 of 349 -  870_1.jpg
+ERROR:root:Error predicting cow ID: in user code:
+
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py", line 2440, in predict_function  *
+        return step_function(self, iterator)
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py", line 2425, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py", line 2413, in run_step  **
+        outputs = model.predict_step(data)
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py", line 2381, in predict_step
+        return self(x, training=False)
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.10/dist-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 400, 400, 3), found shape=(None, 400, 310, 3)
+
+{"error": "Cow ID prediction failed. Please check the image and model."}Processing file 149 of 349 -  7_1.jpg
+
+
+
+###### ICAR-NDRI:
+Checks Version,  Name ,...etc ++
+Page Loading Image & Favicon: App Combined Logo ++
+FAQ -> Quick Link ++
+Important Link rename “Site Links” ++
+Under Model: Name & Version ++
+Completed - Spelling ++
+Header: Name & Sign-Out ++
+In privacy &  t&u the backgroud goes to background
+Benchmarking : 300 Image : Spript ++
