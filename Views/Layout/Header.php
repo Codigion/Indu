@@ -109,14 +109,41 @@
                                 <br>
                                 <strong class="username"><?= $username[0]->username ?></strong>
                             </div>
-                            <div  class="text-center">
-                                <a  style="color:red;" href="<?= Generic::baseURL(); ?>/SignOutUser" >
+                            <div class="text-center">
+                                <a style="color:red;" href="#" data-bs-toggle="modal" data-bs-target="#signOutModal">
                                     Sign Out &nbsp; <i class="fa-solid fa-right-from-bracket"></i>
                                 </a>
+                                <!-- Sign Out Confirmation Modal -->
+                                <!-- Sign Out Confirmation Modal -->
+                                <!-- Sign Out Confirmation Modal -->
+                                <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <!-- Centered modal -->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="signOutModalLabel">Confirm Sign Out</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to sign out?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <a href="<?= Generic::baseURL(); ?>/SignOutUser" class="btn btn-danger">Sign Out</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </nav>
                 <?php } ?>
+                <style>
+                    .modal-backdrop.fade.show {
+                        display: contents !important;
+                    }
+                </style>
                 <div class="header-right">
                     <a href="<?php echo Generic::baseURL(); ?>">
                         <img style="max-width:60px;" alt="Logo" src="<?php echo Generic::baseURL(); ?>/Assets/logo1.png" />

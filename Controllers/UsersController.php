@@ -8,12 +8,13 @@ class UsersController
             if (Validation::isEmpty(Request::post('name'))) {
                 throw new Exception('Oops! Incorrect Name.');
             }
-
-            if ($TryID = System::loadModel('UsersModel')->tryNow(Cookie::get('cid'))) {
-
+            $UsersModel = System::loadModel('UsersModel');
+            if ($TryID = $UsersModel->tryNow(Cookie::get('cid'))) {
                 Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
-                Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
-                
+                $isApp = $UsersModel->isAppUserLogined(Cookie::get('cid'));
+                if (!$isApp) {
+                    Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
+                }
                 Response::json(array(
                     'err' => false,
                     'msg' => 'Registered!'

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PermissionRequestScreen(),
+      home: SplashLoadingScreen(), // Start with the SplashLoadingScreen
     );
   }
 }
@@ -261,20 +261,34 @@ class _MainAppScreenState extends State<MainAppScreen> {
   }
 }
 
-class SplashLoadingScreen extends StatelessWidget {
-  const SplashLoadingScreen({super.key});
+class SplashLoadingScreen extends StatefulWidget {
+  @override
+  _SplashLoadingScreenState createState() => _SplashLoadingScreenState();
+}
+
+class _SplashLoadingScreenState extends State<SplashLoadingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => PermissionRequestScreen(),
+      ));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CircularProgressIndicator(),
+            Image.asset('assets/logo.png', width: 120), // Your logo here
             SizedBox(height: 24),
-            Text('Loading Cow Identification...',
-                style: TextStyle(fontSize: 24)),
+            Text('Biometric Cow Identification',
+                style: TextStyle(fontSize: 18)),
+            Text('NDRI', style: TextStyle(fontSize: 12)),
           ],
         ),
       ),
