@@ -40,42 +40,47 @@
         }
     }
 </style>
+<?php
+$requestUri = basename($_SERVER['REQUEST_URI'])
+?>
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <div  class="brand" style="font-size: 21px;font-weight:bold;"> Cow Identifier - ICAR-NDRI</div>
+        <div class="brand" style="font-size: 21px;font-weight:bold;"> Cow Identifier - ICAR-NDRI</div>
         <div class="row mt-30">
-            <!-- Contact Details -->
-            <div class="col-md-12">
-                <div class="contact-container">
-                    <!-- Left Contact Details -->
-                    <div class="contact-item">
-                        <h6 style="font-size:15px;font-weight:bolder;">Dr. Indu Devi, Scientist (LPM),</h6>
-                        <p>Phone: <a href="tel:<?= PROJECT_PHONE ?>"><?= PROJECT_PHONE ?></a></p>
-                        <p>Email: <a href="mailto:<?= PROJECT_EMAIL ?>"><?= PROJECT_EMAIL ?></a></p>
-                        <p>Address: ICAR-NDRI, Karnal.</p>
+            <?php if ($requestUri != 'our-team') { ?>
+
+                <!-- Contact Details -->
+                <div class="col-md-12">
+                    <div class="contact-container">
+                        <!-- Left Contact Details -->
+                        <div class="contact-item">
+                            <h6 style="font-size:15px;font-weight:bolder;">Dr. Indu Devi, Scientist (LPM),</h6>
+                            <p>Phone: <a href="tel:<?= PROJECT_PHONE ?>"><?= PROJECT_PHONE ?></a></p>
+                            <p>Email: <a href="mailto:<?= PROJECT_EMAIL ?>"><?= PROJECT_EMAIL ?></a></p>
+                            <p>Address: ICAR-NDRI, Karnal.</p>
+                        </div>
+
+                        <!-- Right Contact Details -->
+                        <div class="contact-item">
+                            <h6 style="font-size:15px;font-weight:bolder;">Naseeb Singh, Scientist (Farm Machinery and Power),</h6>
+                            <p>Phone: <a href="tel:+918016243438">8016243438</a></p>
+                            <p>Email: <a href="mailto:naseeb501@gmail.com">naseeb501@gmail.com</a></p>
+                            <p>Address: Division of System Research & Engineering, ICAR RC-NEH Region, Umiam, Meghalaya, India - 793103</p>
+                        </div>
+                        <!-- <div class="contact-item">
+                            <h6 style="font-size:15px;font-weight:bolder;">Dr. Vikas Vohra, PS & Head,</h6>
+                            <p>Address: AGB Division, NDRI, Karnal</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h6 style="font-size:15px;font-weight:bolder;">Dr. T. K. Mohanty, PS (ARGO),</h6>
+                            <p>Address: LPM Division, NDRI, Karnal</p>
+                        </div> -->
                     </div>
 
-                    <!-- Right Contact Details -->
-                    <div class="contact-item">
-                        <h6 style="font-size:15px;font-weight:bolder;">Naseeb Singh, Scientist (Farm Machinery and Power),</h6>
-                        <p>Phone: <a href="tel:+918016243438">8016243438</a></p>
-                        <p>Email: <a href="mailto:naseeb501@gmail.com">naseeb501@gmail.com</a></p>
-                        <p>Address: Division of System Research & Engineering, ICAR RC-NEH Region, Umiam, Meghalaya, India - 793103</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h6 style="font-size:15px;font-weight:bolder;">Dr. Vikas Vohra, PS & Head,</h6>
-                        <p>Address: AGB Division, NDRI, Karnal</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h6 style="font-size:15px;font-weight:bolder;">Dr. T. K. Mohanty, PS (ARGO),</h6>
-                        <p>Address: LPM Division, NDRI, Karnal</p>
-                    </div>
                 </div>
-
-            </div>
+            <?php } ?>
             <div class="col-md-2 col-xs-6">
                 <h6>Quick Links</h6>
                 <ul class="menu-footer mt-40">
