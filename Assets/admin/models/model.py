@@ -1,3 +1,5 @@
+# Benchmarking [https://colab.research.google.com/drive/1PRD5metCHoG1-X4MlpQuKHoXbhei-sMS?usp=sharing]
+
 import os
 import cv2
 from ultralytics import YOLO
@@ -193,7 +195,7 @@ def determine_quality_from_muzzle(muzzle_image, bbox_size, confidence_score):
 
 def main(args):
     try:
-        write_percentage(args.session, "Compelted 5%. Loading Models ...")
+        write_percentage(args.session, "Completed 5%. Loading Models ...")
         yolo_model, cow_ID_model, error = load_models(
             args.yolo_model, args.cow_id_model
         )

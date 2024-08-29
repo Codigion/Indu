@@ -103,7 +103,7 @@
 
 <body>
     <main class="main">
-        <section class="section-box bg-banner-about banner-home-3 pt-100">
+        <section class="section-box bg-banner-about banner-home-3 pt-100 mt-10">
             <div class="banner-hero">
                 <div class="banner-inner">
                     <div class="row">
@@ -127,7 +127,7 @@
                                         <div class="input-group">
                                             <select name="model_version" class="form-select">
                                                 <?php foreach ($models as $model) : ?>
-                                                    <option value="<?= $model->id; ?>"><?= $model->name; ?></option>
+                                                    <option value="<?= $model->id; ?>"> <?= $model->name; ?> /  <?= $model->version; ?> </option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

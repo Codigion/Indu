@@ -76,6 +76,24 @@ class UsersModel
             throw $e;
         }
     }
+    public function getUserName($userID)
+    {
+        try {
+
+            return $this->db->result(
+                $this->db->query("
+                SELECT 
+                    u.name AS username
+                    FROM 
+                    users u
+                WHERE 
+                    u.id = " . $this->db->escape($userID) . "
+                ")
+            );
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
 
 
 

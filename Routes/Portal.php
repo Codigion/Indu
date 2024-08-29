@@ -26,13 +26,13 @@ class Portal extends Controller
             header("Location: " . Generic::baseURL() . "/");
         }
 
-        $result = System::loadModel('ModelsModel')->getActiveModel();
-        if (empty($result[0])) {
+        $username = System::loadModel('UsersModel')->getUserName(Cookie::get('cid'));
+        $model = System::loadModel('ModelsModel')->getActiveModel();
+        if (empty($model[0])) {
             header("Location: " . Generic::baseURL() . "/404");
         }
-
-        $this->layout('Header');
-        $this->view('activity', array('models' => $result));
+        $this->layout('Header',array('username' => $username));
+        $this->view('activity', array('models' => $model));
         $this->layout('Footer');
     }
 
@@ -85,6 +85,14 @@ class Portal extends Controller
 
         $this->layout('Header');
         $this->view('404', array());
+        $this->layout('Footer');
+    }
+    public function ourTeam()
+    {
+        self::logSession();
+
+        $this->layout('Header');
+        $this->view('team', array());
         $this->layout('Footer');
     }
 

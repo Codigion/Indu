@@ -9,31 +9,103 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
 
-  final status = await Permission.camera.request();
-
-  if (status.isGranted) {
-    runApp(const MyApp());
-  } else {
-    // Handle permission denied
-    SystemNavigator.pop();
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: PermissionRequestScreen(),
+    );
   }
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class PermissionRequestScreen extends StatefulWidget {
   @override
-  State<MyApp> createState() => _MyAppState();
+  _PermissionRequestScreenState createState() =>
+      _PermissionRequestScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _PermissionRequestScreenState extends State<PermissionRequestScreen>
+    with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance
+        .addObserver(this); // Add an observer to the lifecycle events
+    _checkAndRequestPermission(); // Initial check
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this); // Clean up the observer
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      _checkAndRequestPermission(); // Check permission again when app is resumed
+    }
+  }
+
+  Future<void> _checkAndRequestPermission() async {
+    var status = await Permission.camera.status;
+    if (status.isDenied) {
+      // Request permission if it is denied
+      await Permission.camera.request();
+      _redirectIfPermissionGranted();
+    } else if (status.isGranted) {
+      _redirectIfPermissionGranted();
+    } // If permission is permanently denied, you might want to handle it differently
+  }
+
+  void _redirectIfPermissionGranted() async {
+    if (await Permission.camera.isGranted) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) =>
+              MainAppScreen())); // Go to the main screen if permission is granted
+    } else {
+      setState(() {}); // Trigger a rebuild to show the permission request UI
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("Camera permission is required to use this app.",
+                style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => openAppSettings(),
+              child: Text('Open App Settings'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MainAppScreen extends StatefulWidget {
+  @override
+  _MainAppScreenState createState() => _MainAppScreenState();
+}
+
+class _MainAppScreenState extends State<MainAppScreen> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
   bool _isOffline = false;
-  bool _cookiesInjected = false; // Flag to track cookie injection
+  bool _cookiesInjected = false;
 
   @override
   void initState() {
@@ -53,56 +125,46 @@ class _MyAppState extends State<MyApp> {
       DeviceOrientation.portraitUp,
     ]);
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: _isOffline
-              ? _buildNoInternetWidget()
-              : WebView(
-                  initialUrl: 'https://cow-identifier.codigion.com/',
-                  javascriptMode: JavascriptMode.unrestricted,
-                  onWebViewCreated: (WebViewController webViewController) async {
-                    _controller.complete(webViewController);
-                    // Check cookies and inject if necessary
-                    if (!_cookiesInjected) {
-                      bool cookieExists = await _checkCookieExists('cid');
-                      if (!cookieExists) {
-                        await _injectCookies();
-                        setState(() {
-                          _cookiesInjected = true;
-                        });
-                      }
+    return Scaffold(
+      body: SafeArea(
+        child: _isOffline
+            ? _buildNoInternetWidget()
+            : WebView(
+                initialUrl: 'https://biometriccowidentification-ndri.in/',
+                javascriptMode: JavascriptMode.unrestricted,
+                onWebViewCreated: (WebViewController webViewController) async {
+                  _controller.complete(webViewController);
+                  if (!_cookiesInjected) {
+                    bool cookieExists = await _checkCookieExists('cid');
+                    if (!cookieExists) {
+                      await _injectCookies();
+                      setState(() {
+                        _cookiesInjected = true;
+                      });
                     }
-                  },
-                  onProgress: (int progress) {
-                    // Handle progress
-                  },
-                  javascriptChannels: <JavascriptChannel>{
-                    _toasterJavascriptChannel(context),
-                  },
-                  navigationDelegate: (NavigationRequest request) async {
-                    if (!request.url
-                        .startsWith("https://cow-identifier.codigion.com/")) {
-                      await launchExternalURL(request.url);
-                      return NavigationDecision.prevent;
-                    }
+                  }
+                },
+                javascriptChannels: <JavascriptChannel>{
+                  _toasterJavascriptChannel(context),
+                },
+                navigationDelegate: (NavigationRequest request) async {
+                  if (request.url ==
+                      "https://biometriccowidentification-ndri.in//SignOutUser") {
+                    await _removeAllCookies();
                     return NavigationDecision.navigate;
-                  },
-                  onPageStarted: (String url) {
-                    // Optionally handle page started
-                  },
-                  onPageFinished: (String url) {
-                    _retrieveCookies(); // Retrieve cookies when the page finishes loading
-                  },
-                  onWebResourceError: (WebResourceError error) {
-                    debugPrint(
-                        'Error Code: ${error.errorCode}, Description: ${error.description}');
-                  },
-                  gestureNavigationEnabled: true,
-                  geolocationEnabled: false,
-                ),
-        ),
+                  } else if (!request.url.startsWith(
+                      "https://biometriccowidentification-ndri.in/")) {
+                    await launchExternalURL(request.url);
+                    return NavigationDecision.prevent;
+                  }
+                  return NavigationDecision.navigate;
+                },
+                onPageFinished: (String url) {
+                  _retrieveCookies();
+                },
+                gestureNavigationEnabled: true,
+                geolocationEnabled: false,
+              ),
       ),
     );
   }
@@ -113,16 +175,16 @@ class _MyAppState extends State<MyApp> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.wifi_off, size: 80, color: Colors.grey),
-          const SizedBox(height: 20),
-          const Text('No Internet Connection', style: TextStyle(fontSize: 18)),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
+          Text('No Internet Connection', style: TextStyle(fontSize: 18)),
+          SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               setState(() {
                 _isOffline = false;
               });
             },
-            child: const Text('Retry'),
+            child: Text('Retry'),
           ),
         ],
       ),
@@ -152,33 +214,23 @@ class _MyAppState extends State<MyApp> {
 
   Future<bool> _checkCookieExists(String cookieName) async {
     final controller = await _controller.future;
-    String script = "document.cookie";
-    String cookies = await controller.runJavascriptReturningResult(script);
-    // Check if the specific cookie is present
+    String cookies =
+        await controller.runJavascriptReturningResult("document.cookie");
     return cookies.contains('$cookieName=');
   }
 
   Future<void> _injectCookies() async {
     final controller = await _controller.future;
     try {
-      var url = Uri.parse(
-          'https://cow-identifier.codigion.com/IsApp'); // Adjust URL as needed
+      var url = Uri.parse('https://biometriccowidentification-ndri.in/IsApp');
       var response = await http.get(url);
       if (response.statusCode == 200) {
-        var data = json.decode(response.body); // Parse the JSON response
-        debugPrint(data.toString());
-
-        // Assuming 'CookieName', 'CookieValue', and optionally 'expires' are fields in your JSON response
+        var data = json.decode(response.body);
         String cookieName = data['CookieName'];
         String cookieValue = data['CookieValue'].toString();
         String expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT;";
-
-        String script = """
-  document.cookie = '$cookieName=$cookieValue; $expires path=/;';
-  """;
-
-        await controller.runJavascript(script);
-        debugPrint('Cookies injected successfully');
+        await controller.runJavascript(
+            "document.cookie = '$cookieName=$cookieValue; $expires path=/;';");
       } else {
         debugPrint('Failed to load data: ${response.statusCode}');
       }
@@ -189,8 +241,43 @@ class _MyAppState extends State<MyApp> {
 
   void _retrieveCookies() async {
     final controller = await _controller.future;
-    String script = "document.cookie";
-    String cookies = await controller.runJavascriptReturningResult(script);
+    String cookies =
+        await controller.runJavascriptReturningResult("document.cookie");
     debugPrint('Retrieved Cookies: $cookies');
+  }
+
+  Future<void> _removeAllCookies() async {
+    final controller = await _controller.future;
+    await controller.runJavascript("""
+      var cookies = document.cookie.split("; ");
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          var eqPos = cookie.indexOf("=");
+          var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+      }
+    """);
+    debugPrint('All cookies removed');
+  }
+}
+
+class SplashLoadingScreen extends StatelessWidget {
+  const SplashLoadingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            CircularProgressIndicator(),
+            SizedBox(height: 24),
+            Text('Loading Cow Identification...',
+                style: TextStyle(fontSize: 24)),
+          ],
+        ),
+      ),
+    );
   }
 }

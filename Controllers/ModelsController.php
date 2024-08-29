@@ -84,6 +84,14 @@ class ModelsController
                 throw new Exception('Oops! Incorrect Version.');
             }
 
+
+
+            // Define regex pattern for v0.0.0 or vx.x.x
+            $pattern = '/^v\d+\.\d+\.\d+$/';            
+            if (!preg_match($pattern, Request::post('version'))) {
+                throw new Exception('Oops! Invalid version format. The version should be in the format v1.0.1 . Please correct the format and try again.');
+            }
+
             $version_path = File::createDirectory(Request::post('version'),  '/Assets/admin/models/versions');
             $version_path = rtrim($version_path, '/\\') . '/';
 

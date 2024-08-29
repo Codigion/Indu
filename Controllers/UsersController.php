@@ -12,9 +12,8 @@ class UsersController
             if ($TryID = System::loadModel('UsersModel')->tryNow(Cookie::get('cid'))) {
 
                 Cookie::set('name', Request::post('name'), time() + 31536000, "/", '', false, false);  // 1 year expiration
-                if (Cookie::cookieExists('cid')) {
-                    Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
-                }
+                Cookie::set('cid', $TryID, time() + 31536000, "/", '', false, false);  // 1 year expiration
+                
                 Response::json(array(
                     'err' => false,
                     'msg' => 'Registered!'
@@ -287,5 +286,13 @@ class UsersController
                 'msg' => $e->getMessage()
             ));
         }
+    }
+
+    public function signOutUser()
+    {
+        Cookie::unset('cid');
+        Cookie::unset('name');
+        Cookie::destroy();
+        header("Location: " . Generic::baseURL());
     }
 }

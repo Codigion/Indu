@@ -121,6 +121,7 @@ server {
     location ~ /THE_DATABASE_BACKUP.sql {
         return 404;
     }
+}
 
 
 https://colab.research.google.com/drive/1PRD5metCHoG1-X4MlpQuKHoXbhei-sMS?usp=sharing

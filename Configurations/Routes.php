@@ -14,11 +14,11 @@ $projectRoutes = array(
     'UpdatePassword' => 'AuthenticationController@updatePassword',
     'Authenticate' => 'AuthenticationController@signIn',
     'SignOut' => 'AuthenticationController@signOut',
-    
+
     'IsApp' => 'UsersController@isApp',
     'TryNow' => 'UsersController@tryNow',
     'IdentifyCow' => 'UsersController@identifyCow',
-   
+    'SignOutUser' => 'UsersController@signOutUser',
    
     'UpdateSettings' => 'SettingsController@updateSettings',
     
@@ -43,6 +43,7 @@ $projectRoutes = array(
     'terms-and-condition' => 'Portal@terms_condition',
     'faq' => 'Portal@faq',
     '404' => 'Portal@notFound',
+    'our-team' => 'Portal@ourTeam',
 
 
     /* Admin Routes */
