@@ -12,21 +12,28 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+        with:
+          fetch-depth: 1 # Only fetch the latest commit to reduce size
+
+      - name: Set up Git sparse checkout
+        run: |
+          git config core.sparseCheckout true
+          echo 'app/*' >> .git/info/sparse-checkout
+          git read-tree -mu HEAD
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.10.6  # Supported by latest flutter version 
-          
+          flutter-version: 3.10.6
         
       - name: Current Directory
-        run:  pwd 
+        run: pwd 
 
       - name: Install dependencies
-        run:  pwd && cd app && flutter pub get
+        run: cd app && flutter pub get
         
       - name: Build Android APK
-        run:  cd app && flutter build apk
+        run: cd app && flutter build apk
       
       - name: Archive APK artifact
         uses: actions/upload-artifact@v2
