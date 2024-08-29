@@ -10,16 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1 # Only fetch the latest commit to reduce size
-
-      - name: Set up Git sparse checkout
+      - name: Checkout only /app directory
         run: |
+          git init
+          git remote add origin https://github.com/Codigion/Indu
           git config core.sparseCheckout true
           echo 'app/*' >> .git/info/sparse-checkout
-          git read-tree -mu HEAD
+          git pull origin master
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
