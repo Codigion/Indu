@@ -85,7 +85,7 @@ class UsersController
             }
 
             self::writeToFile($Session, 'Completed 3%. Initializing Cow Identification configurations...');
-            $ModelsArray =  $ModelsModel->getActiveModel();
+            $ModelsArray =  $ModelsModel->getActiveModel(Request::post('model_version'));
             $SettingsArray = System::loadModel('SettingsModel')->getAllSetting();
 
             $Models = isset($ModelsArray[0]) ? $ModelsArray[0] : null;

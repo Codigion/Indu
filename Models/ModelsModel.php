@@ -35,9 +35,13 @@ class ModelsModel
         }
     }
 
-    public function getActiveModel()
+    public function getActiveModel($modelID = false)
     {
         try {
+            $condition = '';
+            if ($modelID) {
+                $condition .= "AND id = " .  $this->db->escape($modelID);
+            }
 
             return $this->db->result(
                 $this->db->query("
@@ -45,6 +49,7 @@ class ModelsModel
                         FROM models
                         WHERE status = '1'
                         AND is_active = '1'
+                        " . $condition . "
                 ")
             );
         } catch (Exception $e) {
